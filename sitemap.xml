@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/conditionals.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/arrays_2-2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -514,7 +514,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/initializers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/arrays_1-1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -614,7 +614,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/arrays_2-2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/conditionals.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -710,11 +710,11 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/attribute_readers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/initializers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/definition.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -722,7 +722,11 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/definition.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/methods.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/attribute_readers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -775,10 +779,6 @@
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/interaction.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/arrays_1-1.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>
