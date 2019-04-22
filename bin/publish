@@ -13,7 +13,7 @@ function run() {
 function setup() {
   run "mkdir -p build"
   run "$git init"
-  run "$git remote add origin git@github.com:rubymonsters/ruby-for-beginners.git"
+  run "$git remote add origin git@github.com:wdi-sg/ruby-for-beginners.git"
   run "$git fetch"
   run "$git reset --hard origin/gh-pages"
 }

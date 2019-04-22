@@ -8,28 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ruby for Beginners">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
-
-    <title><%= discover_page_title %></title>
 
     <%= stylesheet_link_tag "/assets/stylesheets/monstas" %>
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   </head>
 
   <body>
-    <nav class="page-nav"><%= prev_page %></nav>
-    <nav class="page-nav"><%= next_page %></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
-        <%= toc %>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
         <%= yield %>
-        <nav class="page-nav"><%= prev_page %></nav>
-        <nav class="page-nav"><%= next_page %></nav>
       </article>
     </div>
 
