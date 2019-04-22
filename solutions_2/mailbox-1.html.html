@@ -1,0 +1,49 @@
+<p>```ruby
+class Email
+  def initialize(subject, headers)
+    @subject = subject
+    @headers = headers
+  end</p>
+
+<p>def subject
+    @subject
+  end</p>
+
+<p>def date
+    @headers[:date]
+  end</p>
+
+<p>def from
+    @headers[:from]
+  end
+end</p>
+
+<p>class Mailbox
+  def initialize(name, emails)
+    @name = name
+    @emails = emails
+  end</p>
+
+<p>def name
+    @name
+  end</p>
+
+<p>def emails
+    @emails
+  end
+end</p>
+
+<p>emails = [
+  Email.new(&quot;Homework this week&quot;, { :date =&gt; &quot;2014-12-01&quot;, :from =&gt; &quot;Ferdous&quot; }),
+  Email.new(&quot;Keep on coding! :)&quot;, { :date =&gt; &quot;2014-12-01&quot;, :from =&gt; &quot;Dajana&quot; }),
+  Email.new(&quot;Re: Homework this week&quot;, { :date =&gt; &quot;2014-12-02&quot;, :from =&gt; &quot;Ariane&quot; })
+]
+mailbox = Mailbox.new(&quot;Ruby Study Group&quot;, emails)</p>
+
+<p>mailbox.emails.each do |email|
+  puts &quot;Date:    #{email.date}&quot;
+  puts &quot;From:    #{email.from}&quot;
+  puts &quot;Subject: #{email.subject}&quot;
+  puts
+end
+```</p>

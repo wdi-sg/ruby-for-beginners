@@ -8,580 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ruby for Beginners">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Arrays | Ruby for Beginners</title>
-
-    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/built_in_classes/symbols.html">
-  Previous
-</a></nav>
-    <nav class="page-nav"><a class="next" href="/built_in_classes/hashes.html">
-  Next
-</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
-        <ul>
-  <li>
-    <a href="/index.html">
-      Ruby For Beginners
-    </a>
-  </li>
-  <li>
-    <a href="/preface.html">
-      Preface
-    </a>
-  </li>
-  <li>
-    <a href="/creation.html">
-      Programming is creation
-    </a>
-  </li>
-  <li class="directory">
-    <a href="/learning_to_program.html">
-      Learning to program
-    </a>
-    <ul>
-      <li>
-        <a href="/learning_to_program/learning_modes.html">
-          Learning modes
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/dont_believe.html">
-          Don&rsquo;t believe everything we say
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/formatting_code.html">
-          Formatting your code
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/error_messages.html">
-          Reading error messages
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/using_google.html">
-          Using Google
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/your_tools.html">
-      Your tools
-    </a>
-    <ul>
-      <li>
-        <a href="/your_tools/text_editor.html">
-          Text Editor
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/terminal.html">
-          Terminal
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/ruby_runtime.html">
-          Ruby runtime
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/workflow.html">
-          Programming workflow
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/irb.html">
-          Interactive Ruby
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="/roadmap.html">
-      Our Roadmap
-    </a>
-  </li>
-  <li>
-    <a href="/object_oriented_programming.html">
-      Object-oriented programming
-    </a>
-  </li>
-  <li class="directory">
-    <a href="/variables.html">
-      Variables
-    </a>
-    <ul>
-      <li>
-        <a href="/variables/reusing_names.html">
-          Reusing variable names
-        </a>
-      </li>
-      <li>
-        <a href="/variables/right_goes_first.html">
-          Things on the right go first
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory expanded">
-    <a href="/built_in_classes.html">
-      Built-In Data Types
-    </a>
-    <ul>
-      <li>
-        <a href="/built_in_classes/numbers.html">
-          Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/strings.html">
-          Strings
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/true_false_nil.html">
-          True, False, and Nil
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li class="active">
-        <a href="/built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/hashes.html">
-          Hashes
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/objects.html">
-      Objects, Classes, Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/objects/classes.html">
-          Objects have classes
-        </a>
-      </li>
-      <li>
-        <a href="/objects/instances.html">
-          Classes create objects
-        </a>
-      </li>
-      <li>
-        <a href="/objects/methods.html">
-          Objects have methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/calling.html">
-          Calling methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/arguments.html">
-          Passing arguments
-        </a>
-      </li>
-      <li>
-        <a href="/objects/listing.html">
-          Listing methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/predicates.html">
-          Predicate methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/bangs.html">
-          Bang Methods
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/writing_classes.html">
-      Writing classes
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_classes/definition.html">
-          Defining classes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/methods.html">
-          Defining instance methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/initializers.html">
-          Initializing objects
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/instance_variables.html">
-          Instance variables
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/attribute_readers.html">
-          Attribute readers
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/attribute_writers.html">
-          Attribute writers
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/state_and_behaviour.html">
-          State and behaviour
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/interaction.html">
-          Interacting Objects
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/self.html">
-          Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/blocks.html">
-      Blocks
-    </a>
-    <ul>
-      <li>
-        <a href="/blocks/syntax.html">
-          Alternative block syntaxes
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/arguments.html">
-          Block arguments
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/return_values.html">
-          Block return values
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/ioc.html">
-          Inversion of control
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/iterators.html">
-          Iterators
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/conditionals.html">
-      Conditionals
-    </a>
-    <ul>
-      <li>
-        <a href="/conditionals/nothing_and_truth.html">
-          Nothingness and the truth
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/operators.html">
-      Operators
-    </a>
-    <ul>
-      <li>
-        <a href="/operators/arithmetical.html">
-          Arithmetical operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/logical.html">
-          Logical operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/comparison.html">
-          Comparison operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/methods.html">
-          Operators are methods
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/bonus.html">
-      Bonus Chapters
-    </a>
-    <ul>
-      <li>
-        <a href="/bonus/string_interpolation.html">
-          String interpolation
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/top_level.html">
-          Top-level object
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/other_methods.html">
-          Lots of other methods
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/questions_commands.html">
-          Questions and commands
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/alternative-syntax.html">
-          Alternative Syntax
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/good_names.html">
-          Using the right words
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/parentheses.html">
-          Arguments and parentheses
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/arguments_parameters.html">
-          Terminology: Arguments vs Parameters
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/write_new_method.html">
-          Writing a new method
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/advanced.html">
-      Advanced Topics
-    </a>
-    <ul>
-      <li>
-        <a href="/advanced/libraries.html">
-          Using Libraries (1)
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/modules.html">
-          Modules
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/private_methods.html">
-          Private methods
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/procs.html">
-          Procs
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/yield.html">
-          Yield
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/regular_expressions.html">
-          Regular Expressions
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/exercises.html">
-      Exercises (old)
-    </a>
-    <ul>
-      <li>
-        <a href="/exercises/numbers.html">
-          Working with Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/strings.html">
-          Working with Strings
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/arrays_1.html">
-          Working with Arrays (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/hashes_1.html">
-          Working with Hashes (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/methods_1.html">
-          Defining methods
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/arrays_2.html">
-          Working with Arrays (2)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/nested_arrays.html">
-          Working with Nested Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/hashes_2.html">
-          Working with Hashes (2)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/truthiness.html">
-          Truthiness
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/email.html">
-          The Email Class
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox.html">
-          The Mailbox Class
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_text.html">
-          The Mailbox Text Formatter
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_html.html">
-          The Mailbox Html Formatter
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_file.html">
-          Storing our HTML to a File
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_csv.html">
-          Reading from a CSV File
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/exercises_2.html">
-      Exercises
-    </a>
-    <ul>
-      <li>
-        <a href="/exercises_2/numbers.html">
-          Working with Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/strings.html">
-          Working with Strings
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/arrays_1.html">
-          Working with Arrays (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/hashes_1.html">
-          Working with Hashes (1)
-        </a>
-      </li>
-    </ul>
-  </li>
-</ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
@@ -592,7 +28,7 @@
 <p>While numbers, Strings, <code>true</code>, <code>false</code>, and <code>nil</code> all represent simple,
 primitive things, Arrays are more interesting, and very useful.</p>
 
-<p>Arrays are things that store (or &ldquo;hold&rdquo;) other things. You can think of an
+<p>Arrays are things that store (or &quot;hold&quot;) other things. You can think of an
 Array as a collection or list of things. Or better yet, as a bag that you can
 throw things in: <em>The bag itself is a thing (an object), too</em>.</p>
 
@@ -602,8 +38,10 @@ An Array is an object that stores other objects.
 
 <p>An Array is created by separating values by commas, and enclosing this list
 with square brackets, like so:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</code></pre>
+
+<p><code>ruby
+[1, 2, 3]
+</code></p>
 
 <p>This is a simple Array that holds three numbers.</p>
 
@@ -612,8 +50,10 @@ An Array is created by listing objects, separated by commas, and enclosed by squ
 </p>
 
 <p>Arrays can contain all kinds of things:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"A string"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kp">true</span><span class="p">,</span> <span class="ss">:symbol</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</code></pre>
+
+<p><code>ruby
+[&quot;A string&quot;, 1, true, :symbol, 2]
+</code></p>
 
 <p>This creates an Array with 5 elements, i.e. a bag that contains 5 things: a
 string, a number, <code>true</code>, a symbol, and another number.</p>
@@ -628,8 +68,8 @@ an Array always keeps its objects in the same defined order (unless you do
 something to change the order).</p>
 
 <p>Also note that in Ruby you can store any kind of object in an Array. For
-example, you can also store Arrays in an Array: that&rsquo;s a 2-dimensional Array,
-like a table that has many rows, and each row has many cells (&ldquo;things&rdquo;).</p>
+example, you can also store Arrays in an Array: that&#39;s a 2-dimensional Array,
+like a table that has many rows, and each row has many cells (&quot;things&quot;).</p>
 
 <p class="hint">
 Arrays have a defined order, and can store all kinds of objects.
@@ -642,16 +82,18 @@ one is to retrieve a certain element by the way of referring to its position:
 <em>Please get me the element at position 1!</em></p>
 
 <p>In Ruby, you can do this with square brackets like so:</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</code></pre>
+
+<p><code>ruby
+words = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
+puts words[1]
+</code></p>
 
 <p>Do you recognize how we use a <a href="/variables.html">variable</a> to assign a name
 to our Array here?</p>
 
 <p><code>words[1]</code> means: from the Array <code>words</code> get the element at position
 <code>1</code>. <code>puts</code> will then print this value out to the screen. (By the way<code>puts</code>
-stands for &ldquo;(out-) put string&rdquo;.)</p>
+stands for &quot;(out-) put string&quot;.)</p>
 
 <p>So, as you can see square brackets <code>[]</code> mean different things when used in
 different contexts. The same is true for other punctuation, too.</p>
@@ -669,13 +111,13 @@ Punctuation (such as square brackets) has different meanings in different contex
 <h2>Arrays are zero based</h2>
 
 <p>What do you think our example code will print out to the terminal? Funnily,
-it&rsquo;s <code>two</code>, and not <code>one</code>. Huh?</p>
+it&#39;s <code>two</code>, and not <code>one</code>. Huh?</p>
 
 <p>The reason for this is: The first position in an Array is 0, not 1. So the
 position 1 refers to the second element, not the first one.</p>
 
-<p>In programming books and the Ruby documentation you&rsquo;ll often find the word
-&ldquo;index&rdquo; to be used instead of &ldquo;position&rdquo; in this context.</p>
+<p>In programming books and the Ruby documentation you&#39;ll often find the word
+&quot;index&quot; to be used instead of &quot;position&quot; in this context.</p>
 
 <p class="hint">
 Arrays start with the index 0, not 1.
@@ -684,38 +126,44 @@ Arrays start with the index 0, not 1.
 <h2>Appending an element to an Array</h2>
 
 <p>In order to add an element to the end of an existing Array you can use the
-operator <code>&lt;&lt;</code>, called &ldquo;shovel operator&rdquo;, like so:</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="n">words</span> <span class="o">&lt;&lt;</span> <span class="s2">"four"</span>
-<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-</code></pre>
+operator <code>&lt;&lt;</code>, called &quot;shovel operator&quot;, like so:</p>
 
-<p>This prints out <code>four</code>: The string <code>&quot;four&quot;</code> has been &ldquo;shoveled&rdquo; into, that
+<p><code>ruby
+words = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
+words &lt;&lt; &quot;four&quot;
+puts words[3]
+</code></p>
+
+<p>This prints out <code>four</code>: The string <code>&quot;four&quot;</code> has been &quot;shoveled&quot; into, that
 means, appended to the Array. And since it now sits at position <code>3</code> we can
 access it using <code>words[3]</code>.</p>
 
 <h2>Setting an element to a position</h2>
 
 <p>You can also set an element to a specific index, like so:</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"four"</span>
-<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-</code></pre>
+
+<p><code>ruby
+words = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
+words[3] = &quot;four&quot;
+puts words[3]
+</code></p>
 
 <p>This also prints out <code>four</code>.</p>
 
 <p>You could also overwrite existing elements the same way. For example this
 would set the word <code>&quot;uno&quot;</code> to the position <code>0</code> (i.e. overwrite <code>&quot;one&quot;</code>):</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"uno"</span>
-<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</code></pre>
+
+<p><code>ruby
+words = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
+words[0] = &quot;uno&quot;
+puts words[0]
+</code></p>
 
 <p>So, this would now output <code>uno</code>.</p>
 
 <p class="hint formatting">
 On formatting: Note that there are no spaces inside the square brackets,
-and there&rsquo;s one space after each comma.
+and there's one space after each comma.
 </p>
 
 <h2>Missing elements</h2>
@@ -723,18 +171,23 @@ and there&rsquo;s one space after each comma.
 <p>What if we try to retrieve an element that does not exist, for example
 the element at the fourth, or fifth position (index)?</p>
 
-<p>Right, we get back <code>nil</code>, meaning &ldquo;nothing&rdquo;:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span>
-</code></pre>
+<p>Right, we get back <code>nil</code>, meaning &quot;nothing&quot;:</p>
 
-<p>You&rsquo;ll learn later that every operation (&ldquo;method&rdquo;) in Ruby always
+<p>```ruby</p>
+
+<blockquote>
+<p>words = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
+words[3]
+=&gt; nil
+words[4]
+=&gt; nil
+```</p>
+</blockquote>
+
+<p>You&#39;ll learn later that every operation (&quot;method&quot;) in Ruby always
 <a href="/writing_methods/return_values.html">returns exactly one thing</a>
-(i.e. one object), and that&rsquo;s why there needs to be a &ldquo;thing&rdquo; that represents
-&ldquo;nothing&rdquo;.</p>
+(i.e. one object), and that&#39;s why there needs to be a &quot;thing&quot; that represents
+&quot;nothing&quot;.</p>
 
 <p>This will start to feel pretty natural to you pretty soon.</p>
 
@@ -748,13 +201,15 @@ has the characteristics of a table, like an spreadsheet.</p>
 
 <p>The outer Array represents the table, and each inner Array represents one
 row. Each value then represents a cell. For example:</p>
-<pre class="highlight ruby"><code><span class="p">[</span>
-  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-  <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
-  <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="p">]</span>
-</code></pre>
+
+<p><code>ruby
+[
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [0]
+]
+</code></p>
 
 <p>This is a nested Array that represents the structure of number keys on a phone.</p>
 
@@ -762,80 +217,104 @@ row. Each value then represents a cell. For example:</p>
 
 <p>Here are a few things you can do with Arrays.</p>
 
-<p>Look at them, and play with them in <code>irb</code>. Don&rsquo;t necessarily try to memorize
-all of them &hellip; you can always look things up in the documentation when you
-actually need these. It might be useful if you&rsquo;ve seen some of them before
+<p>Look at them, and play with them in <code>irb</code>. Don&#39;t necessarily try to memorize
+all of them ... you can always look things up in the documentation when you
+actually need these. It might be useful if you&#39;ve seen some of them before
 though.</p>
 
-<p>Funnily, you can &ldquo;calculate&rdquo; with Arrays. Remember set theory from your math
+<p>Funnily, you can &quot;calculate&quot; with Arrays. Remember set theory from your math
 classes? This is pretty similar.</p>
 
 <p>You can add Arrays:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</code></pre>
+
+<p>```ruby
+$ irb</p>
+
+<blockquote>
+<p>[1, 2] + [3, 4]
+=&gt; [1, 2, 3, 4]
+```</p>
+</blockquote>
 
 <p>Subtract them from each other:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="p">[</span><span class="ss">:one</span><span class="p">,</span> <span class="ss">:two</span><span class="p">,</span> <span class="ss">:three</span><span class="p">,</span> <span class="ss">:four</span><span class="p">]</span> <span class="o">-</span> <span class="p">[</span><span class="ss">:three</span><span class="p">,</span> <span class="ss">:four</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:one</span><span class="p">,</span> <span class="ss">:two</span><span class="p">]</span>
-</code></pre>
+
+<p>```ruby
+$ irb</p>
+
+<blockquote>
+<p>[:one, :two, :three, :four] - [:three, :four]
+=&gt; [:one, :two]
+```</p>
+</blockquote>
 
 <p>Multiply with a number:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="p">[</span><span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">,</span> <span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">,</span> <span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">]</span>
-</code></pre>
+
+<p>```ruby
+$ irb</p>
+
+<blockquote>
+<p>[&quot;Ruby&quot;, &quot;Monstas&quot;] * 3
+=&gt; [&quot;Ruby&quot;, &quot;Monstas&quot;, &quot;Ruby&quot;, &quot;Monstas&quot;, &quot;Ruby&quot;, &quot;Monstas&quot;]
+```</p>
+</blockquote>
 
 <p>And find the intersection:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">&amp;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</code></pre>
+
+<p>```ruby
+$ irb</p>
+
+<blockquote>
+<p>[1, 2, 3] &amp; [2, 3, 4]
+=&gt; [2, 3]
+```</p>
+</blockquote>
 
 <p><code>first</code> and <code>last</code> are alternative ways to retrieve the first and last element:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">first</span>
-<span class="mi">1</span>
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">last</span>
-<span class="mi">3</span>
-</code></pre>
+
+<p>```ruby
+$ irb</p>
+
+<blockquote>
+<p>[1, 2, 3].first
+1
+[1, 2, 3].last
+3
+```</p>
+</blockquote>
 
 <p>Some other things that you can do with Arrays that you can try yourself in
 <code>irb</code>:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">length</span>
-<span class="o">=&gt;</span> <span class="mi">3</span>
 
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">sort</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<p>```ruby</p>
 
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kp">nil</span><span class="p">].</span><span class="nf">compact</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<blockquote>
+<p>[1, 2, 3].length
+=&gt; 3</p>
 
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">index</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="mi">2</span>
+<p>[3, 1, 2].sort
+=&gt; [1, 2, 3]</p>
 
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<p>[1, nil, 2, 3, nil].compact
+=&gt; [1, 2, 3]</p>
 
-<span class="o">&gt;</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]].</span><span class="nf">transpose</span>
-<span class="o">=&gt;</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
-</code></pre>
+<p>[1, 2, 3].index(3)
+=&gt; 2</p>
+
+<p>[1, 2, 3, 4].rotate(2)
+=&gt; [3, 4, 1, 2]</p>
+
+<p>[[1, 2, 3], [4, 5, 6], [7, 8, 9]].transpose
+=&gt; [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+```</p>
+</blockquote>
 
 <p>In these examples <code>compact</code> removes all <code>nil</code> values from the Array.
-<code>transpose</code> works with a nested Array and &ldquo;flips&rdquo; the table, i.e. turns columns
+<code>transpose</code> works with a nested Array and &quot;flips&quot; the table, i.e. turns columns
 into rows, and rows into columns.</p>
 
 <p>Exercises: Now would be a good time to do some of the <a href="/exercises/arrays_1.html">exercises on
 Arrays</a>.</p>
 
-        <nav class="page-nav"><a class="prev" href="/built_in_classes/symbols.html">
-  Previous
-</a></nav>
-        <nav class="page-nav"><a class="next" href="/built_in_classes/hashes.html">
-  Next
-</a></nav>
       </article>
     </div>
 
@@ -853,7 +332,7 @@ Arrays</a>.</p>
       </ul>
     </footer>
 
-    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
   </body>
 </html>

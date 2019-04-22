@@ -1,0 +1,13 @@
+<p>```ruby
+words = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;]
+words.delete(&quot;two&quot;)
+words.delete(&quot;four&quot;)</p>
+
+<h1>better solutions:</h1>
+
+<h1>words = words.reject { |word| word == &quot;two&quot; or word == &quot;four&quot; }</h1>
+
+<h1>words = words.select.with_index { |word, ix| ix.even? }</h1>
+
+<p>p words
+```</p>

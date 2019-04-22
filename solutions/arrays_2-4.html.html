@@ -1,0 +1,11 @@
+<p>```ruby
+words = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;]
+words = words.select.with_index { |word, ix| ix.even? }
+words = words.map { |word| word.capitalize }</p>
+
+<p>words = words.map.with_index do |word, ix|
+  hearts = &quot;&lt;3&quot; * (ix * 2 + 1)
+  &quot;#{word} #{hearts}&quot;
+end
+p words
+```</p>

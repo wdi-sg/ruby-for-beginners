@@ -1,0 +1,32 @@
+<p>```ruby
+numbers = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]</p>
+
+<p>sums = numbers.map do |row|
+  sum = 0
+  row.each { |number| sum = sum + number }
+  sum
+end</p>
+
+<p>p sums</p>
+
+<h1>Using inject is a better, because more succinct:</h1>
+
+<h1>sums = numbers.map do |row|</h1>
+
+<h1>row.inject(0) { |sum, number| sum + number }</h1>
+
+<h1>end</h1>
+
+<h1>And you can even do:</h1>
+
+<h1>sums = numbers.map { |row| row.inject(&amp;:+) }</h1>
+
+<h1>This last solution is pretty &quot;magical&quot;, and hard to explain at this point.</h1>
+
+<h1>But we thought we&#39;d show it :)</h1>
+
+<p>```</p>

@@ -1,0 +1,29 @@
+<p>```ruby
+numbers = [1, 2, 3, 4, 5, 6]
+numbers = [numbers[1], numbers[3], numbers[5]]
+p numbers</p>
+
+<h1>This solution isn&#39;t terribly elegant, but at least it shows how</h1>
+
+<h1>you can use the value returned from an array lookup, and create</h1>
+
+<h1>a new array from it right away.</h1>
+
+<h1>Also possible, but not much better:</h1>
+
+<p>second = numbers[1]
+fourth = numbers[3]
+sixth  = numbers[4]
+numbers = [second, fourth, sixth]</p>
+
+<h1>In case you&#39;re curious, a way more elegant (and better) solution</h1>
+
+<h1>to this would be the following:</h1>
+
+<p>numbers = numbers.select { |number| number.even? }</p>
+
+<h1>However, we&#39;ll need to learn more about methods and blocks before</h1>
+
+<h1>we&#39;ll be able to fully understand it.</h1>
+
+<p>```</p>

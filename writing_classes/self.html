@@ -8,580 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ruby for Beginners">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Object Scope and Self | Ruby for Beginners</title>
-
-    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/writing_classes/interaction.html">
-  Previous
-</a></nav>
-    <nav class="page-nav"><a class="next" href="/blocks.html">
-  Next
-</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
-        <ul>
-  <li>
-    <a href="/index.html">
-      Ruby For Beginners
-    </a>
-  </li>
-  <li>
-    <a href="/preface.html">
-      Preface
-    </a>
-  </li>
-  <li>
-    <a href="/creation.html">
-      Programming is creation
-    </a>
-  </li>
-  <li class="directory">
-    <a href="/learning_to_program.html">
-      Learning to program
-    </a>
-    <ul>
-      <li>
-        <a href="/learning_to_program/learning_modes.html">
-          Learning modes
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/dont_believe.html">
-          Don&rsquo;t believe everything we say
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/formatting_code.html">
-          Formatting your code
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/error_messages.html">
-          Reading error messages
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/using_google.html">
-          Using Google
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/your_tools.html">
-      Your tools
-    </a>
-    <ul>
-      <li>
-        <a href="/your_tools/text_editor.html">
-          Text Editor
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/terminal.html">
-          Terminal
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/ruby_runtime.html">
-          Ruby runtime
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/workflow.html">
-          Programming workflow
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/irb.html">
-          Interactive Ruby
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="/roadmap.html">
-      Our Roadmap
-    </a>
-  </li>
-  <li>
-    <a href="/object_oriented_programming.html">
-      Object-oriented programming
-    </a>
-  </li>
-  <li class="directory">
-    <a href="/variables.html">
-      Variables
-    </a>
-    <ul>
-      <li>
-        <a href="/variables/reusing_names.html">
-          Reusing variable names
-        </a>
-      </li>
-      <li>
-        <a href="/variables/right_goes_first.html">
-          Things on the right go first
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/built_in_classes.html">
-      Built-In Data Types
-    </a>
-    <ul>
-      <li>
-        <a href="/built_in_classes/numbers.html">
-          Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/strings.html">
-          Strings
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/true_false_nil.html">
-          True, False, and Nil
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/hashes.html">
-          Hashes
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/objects.html">
-      Objects, Classes, Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/objects/classes.html">
-          Objects have classes
-        </a>
-      </li>
-      <li>
-        <a href="/objects/instances.html">
-          Classes create objects
-        </a>
-      </li>
-      <li>
-        <a href="/objects/methods.html">
-          Objects have methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/calling.html">
-          Calling methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/arguments.html">
-          Passing arguments
-        </a>
-      </li>
-      <li>
-        <a href="/objects/listing.html">
-          Listing methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/predicates.html">
-          Predicate methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/bangs.html">
-          Bang Methods
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory expanded">
-    <a href="/writing_classes.html">
-      Writing classes
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_classes/definition.html">
-          Defining classes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/methods.html">
-          Defining instance methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/initializers.html">
-          Initializing objects
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/instance_variables.html">
-          Instance variables
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/attribute_readers.html">
-          Attribute readers
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/attribute_writers.html">
-          Attribute writers
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/state_and_behaviour.html">
-          State and behaviour
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/interaction.html">
-          Interacting Objects
-        </a>
-      </li>
-      <li class="active">
-        <a href="/writing_classes/self.html">
-          Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/blocks.html">
-      Blocks
-    </a>
-    <ul>
-      <li>
-        <a href="/blocks/syntax.html">
-          Alternative block syntaxes
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/arguments.html">
-          Block arguments
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/return_values.html">
-          Block return values
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/ioc.html">
-          Inversion of control
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/iterators.html">
-          Iterators
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/conditionals.html">
-      Conditionals
-    </a>
-    <ul>
-      <li>
-        <a href="/conditionals/nothing_and_truth.html">
-          Nothingness and the truth
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/operators.html">
-      Operators
-    </a>
-    <ul>
-      <li>
-        <a href="/operators/arithmetical.html">
-          Arithmetical operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/logical.html">
-          Logical operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/comparison.html">
-          Comparison operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/methods.html">
-          Operators are methods
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/bonus.html">
-      Bonus Chapters
-    </a>
-    <ul>
-      <li>
-        <a href="/bonus/string_interpolation.html">
-          String interpolation
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/top_level.html">
-          Top-level object
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/other_methods.html">
-          Lots of other methods
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/questions_commands.html">
-          Questions and commands
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/alternative-syntax.html">
-          Alternative Syntax
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/good_names.html">
-          Using the right words
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/parentheses.html">
-          Arguments and parentheses
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/arguments_parameters.html">
-          Terminology: Arguments vs Parameters
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/write_new_method.html">
-          Writing a new method
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/advanced.html">
-      Advanced Topics
-    </a>
-    <ul>
-      <li>
-        <a href="/advanced/libraries.html">
-          Using Libraries (1)
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/modules.html">
-          Modules
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/private_methods.html">
-          Private methods
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/procs.html">
-          Procs
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/yield.html">
-          Yield
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/regular_expressions.html">
-          Regular Expressions
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/exercises.html">
-      Exercises (old)
-    </a>
-    <ul>
-      <li>
-        <a href="/exercises/numbers.html">
-          Working with Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/strings.html">
-          Working with Strings
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/arrays_1.html">
-          Working with Arrays (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/hashes_1.html">
-          Working with Hashes (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/methods_1.html">
-          Defining methods
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/arrays_2.html">
-          Working with Arrays (2)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/nested_arrays.html">
-          Working with Nested Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/hashes_2.html">
-          Working with Hashes (2)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/truthiness.html">
-          Truthiness
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/email.html">
-          The Email Class
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox.html">
-          The Mailbox Class
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_text.html">
-          The Mailbox Text Formatter
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_html.html">
-          The Mailbox Html Formatter
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_file.html">
-          Storing our HTML to a File
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_csv.html">
-          Reading from a CSV File
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/exercises_2.html">
-      Exercises
-    </a>
-    <ul>
-      <li>
-        <a href="/exercises_2/numbers.html">
-          Working with Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/strings.html">
-          Working with Strings
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/arrays_1.html">
-          Working with Arrays (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/hashes_1.html">
-          Working with Hashes (1)
-        </a>
-      </li>
-    </ul>
-  </li>
-</ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
@@ -594,9 +30,9 @@ the method body.</p>
 <p>We also said that this method body has its own <a href="/writing_methods/scopes.html">scope</a>,
 like a shiny, new room where local variables from other scopes are not visible.
 Instead it has its own local variables, some of which might be defined via the
-method&rsquo;s arguments.</p>
+method&#39;s arguments.</p>
 
-<p>And we also said that inside any object&rsquo;s method all instance variables of
+<p>And we also said that inside any object&#39;s method all instance variables of
 this object, and all other methods of this object are also visible.</p>
 
 <p>We also may have a look at that mysterious <a href="/bonus/top_level.html">top-level object</a>
@@ -607,13 +43,13 @@ introduce a new keyword: <code>self</code>.</p>
 
 <h2>The Object Scope</h2>
 
-<p>In fact, in Ruby, there are even more scopes than just the local method&rsquo;s
+<p>In fact, in Ruby, there are even more scopes than just the local method&#39;s
 scope:</p>
 
-<p>There&rsquo;s the method&rsquo;s local scope, which holds all local variables. And there&rsquo;s
-the object&rsquo;s scope which holds all instance variables and method names.</p>
+<p>There&#39;s the method&#39;s local scope, which holds all local variables. And there&#39;s
+the object&#39;s scope which holds all instance variables and method names.</p>
 
-<p>When Ruby&rsquo;s control flow jumps into a method then both of these scopes are
+<p>When Ruby&#39;s control flow jumps into a method then both of these scopes are
 visible at the same time. For any given name Ruby will first check the local
 scope, and then the object scope.</p>
 
@@ -623,7 +59,7 @@ can access:</p>
 <ul>
 <li>all local variables</li>
 <li>all instance variables</li>
-<li>all of the object&rsquo;s methods</li>
+<li>all of the object&#39;s methods</li>
 </ul>
 
 <p>It also means that one can overwrite, sometimes accidentally, method names
@@ -631,113 +67,132 @@ with variable names. Remember they read just the same in Ruby? While this
 is a really cool feature, it also means we need to be aware of it.</p>
 
 <p>Consider this code:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
-  <span class="c1"># ...</span>
 
-  <span class="k">def</span> <span class="nf">name</span>
-    <span class="vi">@name</span>
-  <span class="k">end</span>
+<p>```ruby
+class Person
+  # ...</p>
 
-  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="nb">name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span>
-    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"."</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
+<p>def name
+    @name
+  end</p>
+
+<p>def greet(other)
+    name = other.name
+    puts &quot;Hi &quot; + name + &quot;! My name is &quot; + name + &quot;.&quot;
+  end
+end
+```</p>
 
 <p>As you can see this defines a new local variable <code>name</code>. The code is very
 similar to what we had <a href="/writing_classes/interaction.html">before</a>, except
-that we store the <code>other</code> person&rsquo;s name to a local variable <code>name</code> first,
+that we store the <code>other</code> person&#39;s name to a local variable <code>name</code> first,
 and then use this variable on the next line when we put together our String.</p>
 
-<p>This breaks our code, of course, in the sense that we don&rsquo;t get the expected
+<p>This breaks our code, of course, in the sense that we don&#39;t get the expected
 greeting any more. Instead it contains the same name twice:</p>
-<pre class="highlight plaintext"><code>Hi Carla! My name is Carla.
-</code></pre>
+
+<p><code>
+Hi Carla! My name is Carla.
+</code></p>
 
 <p>That is because, on the last line of the method <code>greet</code>, when Ruby looks at the
 word (identifier) <code>name</code> she first checks the local scope of the method, and
 finds a local variable defined, so she uses it. Only if there was no local
-variable defined she would check the object&rsquo;s scope, and find the method with
+variable defined she would check the object&#39;s scope, and find the method with
 the same name <code>name</code>, and call it.</p>
 
 <p class="hint">
 When she finds an identifier, Ruby looks for a local variable first, and then for a method.
 </p>
 
-<p>Luckily, there&rsquo;s a way to still access the object&rsquo;s scope:</p>
+<p>Luckily, there&#39;s a way to still access the object&#39;s scope:</p>
 
 <h2>Self</h2>
 
 <p>Every object knows itself, in every method, by the way of calling <code>self</code>.
 This is a special keyword in Ruby, that means just that: The object itself.</p>
 
-<p>Let&rsquo;s try that, and output <code>self</code>. In order to do that we need to add it
-somewhere inside the object. Any method would be good for that, but let&rsquo;s
+<p>Let&#39;s try that, and output <code>self</code>. In order to do that we need to add it
+somewhere inside the object. Any method would be good for that, but let&#39;s
 just use the <code>initialize</code> method:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-    <span class="nb">p</span> <span class="nb">self</span>
-  <span class="k">end</span>
-<span class="k">end</span>
 
-<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
-<span class="nb">p</span> <span class="n">person</span>
-</code></pre>
+<p>```ruby
+class Person
+  def initialize(name)
+    @name = name
+    p self
+  end
+end</p>
+
+<p>person = Person.new(&quot;Anja&quot;)
+p person
+```</p>
 
 <p>This should output something like this:</p>
-<pre class="highlight ruby"><code><span class="c1">#&lt;Person:0x007f9994972428 @name="Anja"&gt;</span>
-<span class="c1">#&lt;Person:0x007f9994972428 @name="Anja"&gt;</span>
-</code></pre>
+
+<p>```ruby</p>
+
+<h1><Person:0x007f9994972428 @name="Anja"></h1>
+
+<h1><Person:0x007f9994972428 @name="Anja"></h1>
+
+<p>```</p>
 
 <p>As you can see we output the same object twice. Once in the <code>initialize</code> method
 using <code>p self</code>, and once in the outer scope using <code>p person</code>. You can also see
 that the cryptic looking object id is the same for both instances. So we can
-know it&rsquo;s indeed the very same object.</p>
+know it&#39;s indeed the very same object.</p>
 
 <p class="hint">
 Inside any method the object can be referred to using the keyword <code>self</code>.
 </p>
 
 <p>So we can fix our code from above like this:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
-  <span class="k">def</span> <span class="nf">name</span>
-    <span class="vi">@name</span>
-  <span class="k">end</span>
 
-  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="nb">name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span>
-    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">self</span><span class="p">.</span><span class="nf">name</span> <span class="o">+</span> <span class="s2">"."</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
+<p>```ruby
+class Person
+  def name
+    @name
+  end</p>
+
+<p>def greet(other)
+    name = other.name
+    puts &quot;Hi &quot; + name + &quot;! My name is &quot; + self.name + &quot;.&quot;
+  end
+end
+```</p>
 
 <p>Now we call the method <code>name</code> on two different objects again. When Ruby sees
-<code>self</code> she knows that we&rsquo;re referring to the person object, and she calls the
+<code>self</code> she knows that we&#39;re referring to the person object, and she calls the
 method <code>name</code> on it.</p>
 
 <p>This fixes our greeting:</p>
-<pre class="highlight plaintext"><code>Hi Carla! My name is Anja.
-</code></pre>
+
+<p><code>
+Hi Carla! My name is Anja.
+</code></p>
 
 <h2>Keywords</h2>
 
 <p>Why do we keep saying that <code>self</code> is a keyword? Well, because is not a method.
-It&rsquo;s a &ldquo;special thing&rdquo; in Ruby. For example this means that the following will
+It&#39;s a &quot;special thing&quot; in Ruby. For example this means that the following will
 raise an error:</p>
-<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
-<span class="nb">p</span> <span class="n">person</span><span class="p">.</span><span class="nf">self</span>
-</code></pre>
+
+<p><code>ruby
+person = Person.new(&quot;Anja&quot;)
+p person.self
+</code></p>
 
 <p>This raises the error:</p>
-<pre class="highlight plaintext"><code>NoMethodError: undefined method `self' for #&lt;Person:0x007f9994972428 @name="Anja"&gt;
-</code></pre>
 
-<p>It&rsquo;s not a method, it&rsquo;s a special thing.</p>
+<p><code>
+NoMethodError: undefined method `self&#39; for #&lt;Person:0x007f9994972428 @name=&quot;Anja&quot;&gt;
+</code></p>
 
-<p>Other keywords that also aren&rsquo;t methods (or objects, or classes) are, for
-example, <code>def</code>, <code>class</code>, and <code>end</code>. You&rsquo;ll also learn about <code>do</code>, <code>if</code>, <code>elsif</code>
+<p>It&#39;s not a method, it&#39;s a special thing.</p>
+
+<p>Other keywords that also aren&#39;t methods (or objects, or classes) are, for
+example, <code>def</code>, <code>class</code>, and <code>end</code>. You&#39;ll also learn about <code>do</code>, <code>if</code>, <code>elsif</code>
 and <code>else</code> a little later.</p>
 
 <p class="hint">
@@ -745,12 +200,6 @@ Keywords are words that have a special meaning in Ruby, such as
 <code>class</code>, <code>def</code>, <code>end</code>, and <code>self</code>.
 </p>
 
-        <nav class="page-nav"><a class="prev" href="/writing_classes/interaction.html">
-  Previous
-</a></nav>
-        <nav class="page-nav"><a class="next" href="/blocks.html">
-  Next
-</a></nav>
       </article>
     </div>
 
@@ -768,7 +217,7 @@ Keywords are words that have a special meaning in Ruby, such as
       </ul>
     </footer>
 
-    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
   </body>
 </html>

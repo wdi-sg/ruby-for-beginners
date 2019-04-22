@@ -1,0 +1,13 @@
+<p>```ruby
+numbers = [
+  [1, 2, 3],
+  [2, 2, 2],
+  [3, 2, 1]
+]</p>
+
+<p>lines = numbers.map do |row|
+  row.map { |number| &quot;*&quot; * number }.join(&quot; &quot;)
+end</p>
+
+<p>lines.each { |line| puts line }
+```</p>

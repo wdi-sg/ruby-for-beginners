@@ -8,580 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ruby for Beginners">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Object-oriented programming | Ruby for Beginners</title>
-
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
+    <link href="assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/roadmap.html">
-  Previous
-</a></nav>
-    <nav class="page-nav"><a class="next" href="/variables.html">
-  Next
-</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
-        <ul>
-  <li>
-    <a href="/index.html">
-      Ruby For Beginners
-    </a>
-  </li>
-  <li>
-    <a href="/preface.html">
-      Preface
-    </a>
-  </li>
-  <li>
-    <a href="/creation.html">
-      Programming is creation
-    </a>
-  </li>
-  <li class="directory">
-    <a href="/learning_to_program.html">
-      Learning to program
-    </a>
-    <ul>
-      <li>
-        <a href="/learning_to_program/learning_modes.html">
-          Learning modes
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/dont_believe.html">
-          Don&rsquo;t believe everything we say
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/formatting_code.html">
-          Formatting your code
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/error_messages.html">
-          Reading error messages
-        </a>
-      </li>
-      <li>
-        <a href="/learning_to_program/using_google.html">
-          Using Google
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/your_tools.html">
-      Your tools
-    </a>
-    <ul>
-      <li>
-        <a href="/your_tools/text_editor.html">
-          Text Editor
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/terminal.html">
-          Terminal
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/ruby_runtime.html">
-          Ruby runtime
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/workflow.html">
-          Programming workflow
-        </a>
-      </li>
-      <li>
-        <a href="/your_tools/irb.html">
-          Interactive Ruby
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="/roadmap.html">
-      Our Roadmap
-    </a>
-  </li>
-  <li class="active">
-    <a href="/object_oriented_programming.html">
-      Object-oriented programming
-    </a>
-  </li>
-  <li class="directory">
-    <a href="/variables.html">
-      Variables
-    </a>
-    <ul>
-      <li>
-        <a href="/variables/reusing_names.html">
-          Reusing variable names
-        </a>
-      </li>
-      <li>
-        <a href="/variables/right_goes_first.html">
-          Things on the right go first
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/built_in_classes.html">
-      Built-In Data Types
-    </a>
-    <ul>
-      <li>
-        <a href="/built_in_classes/numbers.html">
-          Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/strings.html">
-          Strings
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/true_false_nil.html">
-          True, False, and Nil
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/built_in_classes/hashes.html">
-          Hashes
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/objects.html">
-      Objects, Classes, Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/objects/classes.html">
-          Objects have classes
-        </a>
-      </li>
-      <li>
-        <a href="/objects/instances.html">
-          Classes create objects
-        </a>
-      </li>
-      <li>
-        <a href="/objects/methods.html">
-          Objects have methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/calling.html">
-          Calling methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/arguments.html">
-          Passing arguments
-        </a>
-      </li>
-      <li>
-        <a href="/objects/listing.html">
-          Listing methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/predicates.html">
-          Predicate methods
-        </a>
-      </li>
-      <li>
-        <a href="/objects/bangs.html">
-          Bang Methods
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/writing_classes.html">
-      Writing classes
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_classes/definition.html">
-          Defining classes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/methods.html">
-          Defining instance methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/initializers.html">
-          Initializing objects
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/instance_variables.html">
-          Instance variables
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/attribute_readers.html">
-          Attribute readers
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/attribute_writers.html">
-          Attribute writers
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/state_and_behaviour.html">
-          State and behaviour
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/interaction.html">
-          Interacting Objects
-        </a>
-      </li>
-      <li>
-        <a href="/writing_classes/self.html">
-          Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/blocks.html">
-      Blocks
-    </a>
-    <ul>
-      <li>
-        <a href="/blocks/syntax.html">
-          Alternative block syntaxes
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/arguments.html">
-          Block arguments
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/return_values.html">
-          Block return values
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/ioc.html">
-          Inversion of control
-        </a>
-      </li>
-      <li>
-        <a href="/blocks/iterators.html">
-          Iterators
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/conditionals.html">
-      Conditionals
-    </a>
-    <ul>
-      <li>
-        <a href="/conditionals/nothing_and_truth.html">
-          Nothingness and the truth
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/operators.html">
-      Operators
-    </a>
-    <ul>
-      <li>
-        <a href="/operators/arithmetical.html">
-          Arithmetical operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/logical.html">
-          Logical operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/comparison.html">
-          Comparison operators
-        </a>
-      </li>
-      <li>
-        <a href="/operators/methods.html">
-          Operators are methods
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/bonus.html">
-      Bonus Chapters
-    </a>
-    <ul>
-      <li>
-        <a href="/bonus/string_interpolation.html">
-          String interpolation
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/top_level.html">
-          Top-level object
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/other_methods.html">
-          Lots of other methods
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/questions_commands.html">
-          Questions and commands
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/alternative-syntax.html">
-          Alternative Syntax
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/good_names.html">
-          Using the right words
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/parentheses.html">
-          Arguments and parentheses
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/arguments_parameters.html">
-          Terminology: Arguments vs Parameters
-        </a>
-      </li>
-      <li>
-        <a href="/bonus/write_new_method.html">
-          Writing a new method
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/advanced.html">
-      Advanced Topics
-    </a>
-    <ul>
-      <li>
-        <a href="/advanced/libraries.html">
-          Using Libraries (1)
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/modules.html">
-          Modules
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/private_methods.html">
-          Private methods
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/procs.html">
-          Procs
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/yield.html">
-          Yield
-        </a>
-      </li>
-      <li>
-        <a href="/advanced/regular_expressions.html">
-          Regular Expressions
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/exercises.html">
-      Exercises (old)
-    </a>
-    <ul>
-      <li>
-        <a href="/exercises/numbers.html">
-          Working with Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/strings.html">
-          Working with Strings
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/arrays_1.html">
-          Working with Arrays (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/hashes_1.html">
-          Working with Hashes (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/methods_1.html">
-          Defining methods
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/arrays_2.html">
-          Working with Arrays (2)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/nested_arrays.html">
-          Working with Nested Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/hashes_2.html">
-          Working with Hashes (2)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/truthiness.html">
-          Truthiness
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/email.html">
-          The Email Class
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox.html">
-          The Mailbox Class
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_text.html">
-          The Mailbox Text Formatter
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_html.html">
-          The Mailbox Html Formatter
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_file.html">
-          Storing our HTML to a File
-        </a>
-      </li>
-      <li>
-        <a href="/exercises/mailbox_csv.html">
-          Reading from a CSV File
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/exercises_2.html">
-      Exercises
-    </a>
-    <ul>
-      <li>
-        <a href="/exercises_2/numbers.html">
-          Working with Numbers
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/strings.html">
-          Working with Strings
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/arrays_1.html">
-          Working with Arrays (1)
-        </a>
-      </li>
-      <li>
-        <a href="/exercises_2/hashes_1.html">
-          Working with Hashes (1)
-        </a>
-      </li>
-    </ul>
-  </li>
-</ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
@@ -600,21 +36,21 @@ we perceive and think about the world, at least in the occidental culture.
 Our way of thinking was, historically, very much influenced by Plato,
 and philosophers who followed him:</p>
 
-<p>We somehow tend to think about the world as if there are abstract &ldquo;ideas&rdquo; (or
-concepts) and concrete &ldquo;things&rdquo;, which are entities of the ideas, or
-implementations of the concepts. So, &ldquo;ideas&rdquo; are like blueprints for &ldquo;things&rdquo;.</p>
+<p>We somehow tend to think about the world as if there are abstract &quot;ideas&quot; (or
+concepts) and concrete &quot;things&quot;, which are entities of the ideas, or
+implementations of the concepts. So, &quot;ideas&quot; are like blueprints for &quot;things&quot;.</p>
 
-<p>For example there&rsquo;s the idea of a human being, and then there are actual human
+<p>For example there&#39;s the idea of a human being, and then there are actual human
 beings: you, and me. Our idea of a human being includes the ability to, for
 example, remember our own name, and tell it to others when asked. We know
-that we can ask people for their name, and they&rsquo;ll know it.</p>
+that we can ask people for their name, and they&#39;ll know it.</p>
 
 <p>Now, object-oriented programming languages allow you to describe things exactly
-this way: In object-oriented programming languages &ldquo;ideas&rdquo; are called classes.
-And actual &ldquo;things&rdquo; are called objects.</p>
+this way: In object-oriented programming languages &quot;ideas&quot; are called classes.
+And actual &quot;things&quot; are called objects.</p>
 
-<p>As a programmer you would define classes, like a class &ldquo;User&rdquo; and a class
-&ldquo;Tweet&rdquo;, and then create actual instances of these classes: an actual concrete
+<p>As a programmer you would define classes, like a class &quot;User&quot; and a class
+&quot;Tweet&quot;, and then create actual instances of these classes: an actual concrete
 user with a name, email address, a password and actual tweets. You would also
 define that users have the ability to remember their own name, and the ability
 to tell it to others when asked.</p>
@@ -623,13 +59,13 @@ to tell it to others when asked.</p>
 Classes are like ideas, objects are concrete things, manifestations of their ideas.
 </p>
 
-<p>Every object-oriented programming language comes with some &ldquo;ideas&rdquo;, that is,
+<p>Every object-oriented programming language comes with some &quot;ideas&quot;, that is,
 classes, already baked in, and so does Ruby. For example Ruby has classes for
 numbers, strings (text), and other useful things. You therefore can, without any
 further effort, do number calculations, or text transformations.</p>
 
 <p>In your first excercises you will do just that. Later on you will learn to
-define your own &ldquo;ideas&rdquo; as classes, and then use them by the way of creating
+define your own &quot;ideas&quot; as classes, and then use them by the way of creating
 actual instances or objects, from these classes, and then make them interact with
 each other and do interesting stuff.</p>
 
@@ -638,37 +74,31 @@ each other and do interesting stuff.</p>
 from 1993. It has been written by Alan C. Kay, one of the designers of
 <a href="https://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a>, which was created in the
 1970s, and can be considered the first fully object oriented programming
-language. We think it&rsquo;s pretty interesting to read.</p>
+language. We think it&#39;s pretty interesting to read.</p>
 
-<p><em>&ldquo;[Smalltalk&rsquo;s] way of <strong>making objects</strong> is quite Platonic in that some of them act
-as [&hellip;] <strong>Ideas from which manifestations can be created</strong>.
+<p><em>&quot;[Smalltalk&#39;s] way of <strong>making objects</strong> is quite Platonic in that some of them act
+as [...] <strong>Ideas from which manifestations can be created</strong>.
 That the Ideas are themselves manifestations (of the Idea-Idea) and that the
 Idea-Idea is a-kind-of Manifestation-Idea — which is a-kind-of itself, so that
 the system is completely self-describing — would have been appreciated by Plato
-as an extremely practical joke.&rdquo; &mdash; Alan C. Kay</em></p>
+as an extremely practical joke.&quot; &mdash; Alan C. Kay</em></p>
 
 <p>Anyhow, you can take away from all of this that those universes that we create
-when we write programs will be populated by objects (&ldquo;things&rdquo;), and their
-characteristics are defined by classes (&ldquo;types of things&rdquo;, or &ldquo;ideas&rdquo;).</p>
+when we write programs will be populated by objects (&quot;things&quot;), and their
+characteristics are defined by classes (&quot;types of things&quot;, or &quot;ideas&quot;).</p>
 
 <p>This will start to make a lot more sense to you once you write your own classes.</p>
 
 <p class="hint sidenote">
 There is, today, some debate about the paradigm of object-oriented
-programming, and whether we should move on to another one, called &ldquo;functional
-programming&rdquo;. You might hear about this if you talk to developers. Some
+programming, and whether we should move on to another one, called "functional
+programming". You might hear about this if you talk to developers. Some
 functional languages are Haskell, Go, and Clojure, and they have recently
-started gaining some traction. Don&rsquo;t let yourself be distracted by this too
+started gaining some traction. Don't let yourself be distracted by this too
 much, unless you really want to. Ruby is a very good language to start learning
 programming for lots of reasons.
 </p>
 
-        <nav class="page-nav"><a class="prev" href="/roadmap.html">
-  Previous
-</a></nav>
-        <nav class="page-nav"><a class="next" href="/variables.html">
-  Next
-</a></nav>
       </article>
     </div>
 
@@ -686,7 +116,7 @@ programming for lots of reasons.
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="assets/javascripts/monstas-83702c28.js"></script>
   </body>
 </html>
