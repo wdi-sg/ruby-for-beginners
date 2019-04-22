@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#working-with-arrays-2">Working with Arrays (2)</a>
+<ul>
+<li>
+<a href="#exercise-6-1">Exercise 6.1</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#your-code-goes-here">your code goes here</a>
+<ul>
+<li>
+<a href="#exercise-6-2">Exercise 6.2</a>
+</li>
+<li>
+<a href="#exercise-6-3">Exercise 6.3</a>
+</li>
+<li>
+<a href="#exercise-6-4">Exercise 6.4</a>
+</li>
+<li>
+<a href="#exercise-6-5">Exercise 6.5</a>
+</li>
+<li>
+<a href="#exercise-6-6">Exercise 6.6</a>
+</li>
+<li>
+<a href="#exercise-6-7">Exercise 6.7</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Working with Arrays (2)</h1>
+
+<p>Note: At the moment these exercises require reading up until &ldquo;Block return values&rdquo;.
+You should know how to use the method <code>collect</code> on arrays.</p>
+
+<p>Before you get started, make sure you have your text editor and terminal open, and
+you have navigated to your exercises directory in the terminal. E.g. <code>cd
+~/ruby-for-beginners/exercises</code>.</p>
+
+<h2>Exercise 6.1</h2>
+
+<p>Create a new, empty file. Save it as <code>arrays_2-1.rb</code>. Fill in the following line:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">,</span> <span class="s2">"five"</span><span class="p">]</span>
+<span class="c1"># your code goes here</span>
+<span class="nb">p</span> <span class="n">words</span>
+</code></pre></div>
+<p>So that you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"five"</span><span class="p">]</span>
+</code></pre></div>
+<p><a href="/solutions/arrays_2-1.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 6.2</h2>
+
+<p>Copy your file to a new file: <code>cp arrays_2-1.rb arrays_2-2.rb</code>, then open this
+new file.</p>
+
+<p>Now change your code so that you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"One"</span><span class="p">,</span> <span class="s2">"Three"</span><span class="p">,</span> <span class="s2">"Five"</span><span class="p">]</span>
+</code></pre></div>
+<p class="hint">
+Google for <code>ruby string uppercase first letter</code>.
+</p>
+
+<p><a href="/solutions/arrays_2-2.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 6.3</h2>
+
+<p>Copy your file to a new file: <code>cp arrays_2-2.rb arrays_2-3.rb</code>, then open this
+new file.</p>
+
+<p>Now change your code so that you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"One &lt;3"</span><span class="p">,</span> <span class="s2">"Three &lt;3"</span><span class="p">,</span> <span class="s2">"Five &lt;3"</span><span class="p">]</span>
+</code></pre></div>
+<p class="hint">
+Use string interpolation for this.
+</p>
+
+<p><a href="/solutions/arrays_2-3.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 6.4</h2>
+
+<p>Copy your file to a new file: <code>cp arrays_2-3.rb arrays_2-4.rb</code>, then open this
+new file.</p>
+
+<p>Now change your code so that you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"One &lt;3"</span><span class="p">,</span> <span class="s2">"Three &lt;3&lt;3&lt;3"</span><span class="p">,</span> <span class="s2">"Five &lt;3&lt;3&lt;3&lt;3&lt;3"</span><span class="p">]</span>
+</code></pre></div>
+<p><a href="/solutions/arrays_2-4.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 6.5</h2>
+
+<p>Copy your file to a new file: <code>cp arrays_2-4.rb arrays_2-5.rb</code>, then open this
+new file.</p>
+
+<p>Now change your code so that you get the following output (hint: again, that&rsquo;s
+now a string, not an array):</p>
+<div class="highlight"><pre class="highlight plaintext"><code>One &lt;3, Three &lt;3&lt;3&lt;3, Five &lt;3&lt;3&lt;3&lt;3&lt;3
+</code></pre></div>
+<p><a href="/solutions/arrays_2-5.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 6.6</h2>
+
+<p>Copy your file to a new file: <code>cp arrays_2-5.rb arrays_2-6.rb</code>, then open this
+new file.</p>
+
+<p>Now change your code so that you get the following output, using the newline
+character <code>&quot;\n&quot;</code>:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>One &lt;3
+Three &lt;3&lt;3&lt;3
+Five &lt;3&lt;3&lt;3&lt;3&lt;3
+</code></pre></div>
+<p><a href="/solutions/arrays_2-6.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 6.7</h2>
+
+<p>Copy your file to a new file: <code>cp arrays_2-6.rb arrays_2-7.rb</code>, then open this
+new file.</p>
+
+<p>Now change your code so that you get the following output, aligning the second
+column:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>One   &lt;3
+Three &lt;3&lt;3&lt;3
+Five  &lt;3&lt;3&lt;3&lt;3&lt;3
+</code></pre></div>
+<p class="hint">
+As you may guess, strings have a method that is helpful for this. Ask
+Google: &ldquo;ruby string align&rdquo;.
+</p>
+
+<p><a href="/solutions/arrays_2-7.html" class="solution">Show solution</a></p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

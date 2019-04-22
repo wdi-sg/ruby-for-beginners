@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#object-scope-and-self">Object Scope and Self</a>
+<ul>
+<li>
+<a href="#the-object-scope">The Object Scope</a>
+</li>
+<li>
+<a href="#self">Self</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#part-d5cdc0201cc343d0"><Person:0x007f9994972428 @name="Anja"></a>
+</li>
+<li>
+<a href="#part-d5cdc0201cc343d0"><Person:0x007f9994972428 @name="Anja"></a>
+<ul>
+<li>
+<a href="#keywords">Keywords</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Object Scope and Self</h1>
+
+<p>Remember how we said that when Ruby finds a method call she then deviates from
+the normal control flow which goes from top to bottom? Instead she jumps into
+the method body.</p>
+
+<p>We also said that this method body has its own <a href="/writing_methods/scopes.html">scope</a>,
+like a shiny, new room where local variables from other scopes are not visible.
+Instead it has its own local variables, some of which might be defined via the
+method&rsquo;s arguments.</p>
+
+<p>And we also said that inside any object&rsquo;s method all instance variables of
+this object, and all other methods of this object are also visible.</p>
+
+<p>We also may have a look at that mysterious <a href="/bonus/top_level.html">top-level object</a>
+that Ruby enters when she starts executing a program, or IRB.</p>
+
+<p>We are now finally ready to put all these things together a little more, and
+introduce a new keyword: <code>self</code>.</p>
+
+<h2>The Object Scope</h2>
+
+<p>In fact, in Ruby, there are even more scopes than just the local method&rsquo;s
+scope:</p>
+
+<p>There&rsquo;s the method&rsquo;s local scope, which holds all local variables. And there&rsquo;s
+the object&rsquo;s scope which holds all instance variables and method names.</p>
+
+<p>When Ruby&rsquo;s control flow jumps into a method then both of these scopes are
+visible at the same time. For any given name Ruby will first check the local
+scope, and then the object scope.</p>
+
+<p>In reality this most importantly means that from any method on an object, you
+can access:</p>
+
+<ul>
+<li>all local variables</li>
+<li>all instance variables</li>
+<li>all of the object&rsquo;s methods</li>
+</ul>
+
+<p>It also means that one can overwrite, sometimes accidentally, method names
+with variable names. Remember they read just the same in Ruby? While this
+is a really cool feature, it also means we need to be aware of it.</p>
+
+<p>Consider this code:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># ...</span>
+
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>As you can see this defines a new local variable <code>name</code>. The code is very
+similar to what we had <a href="/writing_classes/interaction.html">before</a>, except
+that we store the <code>other</code> person&rsquo;s name to a local variable <code>name</code> first,
+and then use this variable on the next line when we put together our String.</p>
+
+<p>This breaks our code, of course, in the sense that we don&rsquo;t get the expected
+greeting any more. Instead it contains the same name twice:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>Hi Carla! My name is Carla.
+</code></pre></div>
+<p>That is because, on the last line of the method <code>greet</code>, when Ruby looks at the
+word (identifier) <code>name</code> she first checks the local scope of the method, and
+finds a local variable defined, so she uses it. Only if there was no local
+variable defined she would check the object&rsquo;s scope, and find the method with
+the same name <code>name</code>, and call it.</p>
+
+<p class="hint">
+When she finds an identifier, Ruby looks for a local variable first, and then for a method.
+</p>
+
+<p>Luckily, there&rsquo;s a way to still access the object&rsquo;s scope:</p>
+
+<h2>Self</h2>
+
+<p>Every object knows itself, in every method, by the way of calling <code>self</code>.
+This is a special keyword in Ruby, that means just that: The object itself.</p>
+
+<p>Let&rsquo;s try that, and output <code>self</code>. In order to do that we need to add it
+somewhere inside the object. Any method would be good for that, but let&rsquo;s
+just use the <code>initialize</code> method:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+    <span class="nb">p</span> <span class="nb">self</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span>
+</code></pre></div>
+<p>This should output something like this:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="c1">#&lt;Person:0x007f9994972428 @name="Anja"&gt;</span>
+<span class="c1">#&lt;Person:0x007f9994972428 @name="Anja"&gt;</span>
+</code></pre></div>
+<p>As you can see we output the same object twice. Once in the <code>initialize</code> method
+using <code>p self</code>, and once in the outer scope using <code>p person</code>. You can also see
+that the cryptic looking object id is the same for both instances. So we can
+know it&rsquo;s indeed the very same object.</p>
+
+<p class="hint">
+Inside any method the object can be referred to using the keyword <code>self</code>.
+</p>
+
+<p>So we can fix our code from above like this:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">self</span><span class="p">.</span><span class="nf">name</span> <span class="o">+</span> <span class="s2">"."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Now we call the method <code>name</code> on two different objects again. When Ruby sees
+<code>self</code> she knows that we&rsquo;re referring to the person object, and she calls the
+method <code>name</code> on it.</p>
+
+<p>This fixes our greeting:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>Hi Carla! My name is Anja.
+</code></pre></div>
+<h2>Keywords</h2>
+
+<p>Why do we keep saying that <code>self</code> is a keyword? Well, because is not a method.
+It&rsquo;s a &ldquo;special thing&rdquo; in Ruby. For example this means that the following will
+raise an error:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span><span class="p">.</span><span class="nf">self</span>
+</code></pre></div>
+<p>This raises the error:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>NoMethodError: undefined method `self' for #&lt;Person:0x007f9994972428 @name="Anja"&gt;
+</code></pre></div>
+<p>It&rsquo;s not a method, it&rsquo;s a special thing.</p>
+
+<p>Other keywords that also aren&rsquo;t methods (or objects, or classes) are, for
+example, <code>def</code>, <code>class</code>, and <code>end</code>. You&rsquo;ll also learn about <code>do</code>, <code>if</code>, <code>elsif</code>
+and <code>else</code> a little later.</p>
+
+<p class="hint">
+Keywords are words that have a special meaning in Ruby, such as
+<code>class</code>, <code>def</code>, <code>end</code>, and <code>self</code>.
+</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#truthiness">Truthiness</a>
+<ul>
+<li>
+<a href="#exercise-9-1">Exercise 9.1</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#true-false"><Object:0x007fb3dc0ea1b8> | [true|false]</a>
+</li>
+<li>
+<a href="#true-false"><Class:0x007fb3dc0e2cd8>  | [true|false]</a>
+</li>
+<li>
+<a href="#true-false"><Module:0x007fb3dc0d9ea8> | [true|false]</a>
+</li>
+<li>
+<a href="#true"><Object> | true</a>
+</li>
+<li>
+<a href="#true"><Class>  | true</a>
+</li>
+<li>
+<a href="#true"><Module> | true</a>
+<ul>
+<li>
+<a href="#bonus-exercise-9-2">Bonus: Exercise 9.2</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#part-53bd2758c7c44152"><Object> |           |            |            |            |            |            |           |           |</a>
+</li>
+<li>
+<a href="#part-79d96251db480b71"><Class>  |           |            |            |            |            |            |           |           |</a>
+</li>
+<li>
+<a href="#part-390ad6876f5ddc81"><Module> |           |            |            |            |            |            |           |           |</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Truthiness</h1>
+
+<h2>Exercise 9.1</h2>
+
+<p>Make a new file <code>truthiness-1.rb</code>, and add the following lines:</p>
+
+<p>This exercise is about validating what we&rsquo;ve learned about truthiness.</p>
+
+<p>You have the following array:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="p">[],</span> <span class="no">Object</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span><span class="p">]</span>
+</code></pre></div>
+<p>Add some code that outputs the following table. The last column should be
+filled in with by either <code>true</code> or <code>false</code> depending what the operation
+<code>!!object</code><code>, which is the same as</code>not not object` for each of the objects
+returns:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>object                     | !!object
+true                       | [true|false]
+false                      | [true|false]
+nil                        | [true|false]
+0                          | [true|false]
+1                          | [true|false]
+""                         | [true|false]
+[]                         | [true|false]
+#&lt;Object:0x007fb3dc0ea1b8&gt; | [true|false]
+#&lt;Class:0x007fb3dc0e2cd8&gt;  | [true|false]
+#&lt;Module:0x007fb3dc0d9ea8&gt; | [true|false]
+</code></pre></div>
+<p>You can use the method <code>inspect</code> in order to, for each of the values, get a
+representation that looks like the code.</p>
+
+<p>Of course you will get different object ids for the object, class, and module
+instances everytime you run your code.</p>
+
+<p>So let&rsquo;s prettify this table by removing the object ids. You can do this
+calling <code>sub(/:.*&gt;/, &quot;&gt;&quot;)</code> on whatever <code>inspect</code> returns.</p>
+
+<p>Your table should now look like this:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>object    | !!object
+true      | true
+false     | false
+nil       | false
+0         | true
+1         | true
+""        | true
+[]        | true
+#&lt;Object&gt; | true
+#&lt;Class&gt;  | true
+#&lt;Module&gt; | true
+</code></pre></div>
+<p><a href="/solutions/truthiness-1.html" class="solution">Show solution</a></p>
+
+<h2>Bonus: Exercise 9.2</h2>
+
+<p>Copy your file to a new file <code>truthiness-2.rb</code>, and change your code so that
+it outputs the following table. Fill each cell with the result that <code>==</code>
+returns for each combination.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>          | true      | false      | 0          | 1          | ""         | []         | #&lt;Object&gt; | #&lt;Class&gt;  | #&lt;Module&gt;
+true      |           |            |            |            |            |            |           |           |
+false     |           |            |            |            |            |            |           |           |
+0         |           |            |            |            |            |            |           |           |
+1         |           |            |            |            |            |            |           |           |
+""        |           |            |            |            |            |            |           |           |
+[]        |           |            |            |            |            |            |           |           |
+#&lt;Object&gt; |           |            |            |            |            |            |           |           |
+#&lt;Class&gt;  |           |            |            |            |            |            |           |           |
+#&lt;Module&gt; |           |            |            |            |            |            |           |           |
+</code></pre></div>
+<p>Tip: Break this up in sub-tasks:</p>
+
+<ol>
+<li>Write some code that collects an array of arrays containing all rows: An
+array <code>rows</code> that has many arrays, each of which holds 9 results (cells).</li>
+<li>Add the value&rsquo;s representation to the beginning to the row. If you don&rsquo;t
+know how, google for &ldquo;ruby array add to beginning&rdquo;</li>
+<li>Make sure each of the cells is 9 characters wide.</li>
+<li>Join each of the row with the string <code>&quot; | &quot;</code>.</li>
+<li>Add the table headers row.</li>
+<li>Join all rows with the string <code>&quot;\n&quot;</code> (newline), and output the result.</li>
+</ol>
+
+<p><a href="/solutions/truthiness-2.html" class="solution">Show solution</a></p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

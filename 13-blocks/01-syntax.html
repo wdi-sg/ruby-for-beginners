@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#alternative-block-syntaxes">Alternative block syntaxes</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Alternative block syntaxes</h1>
+
+<p>Next to the syntax shown before, using <code>do</code> and <code>end</code>, Ruby comes with an
+alternative syntax, which uses curly braces for defining a block.</p>
+
+<p>These two statements do exactly the same:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">"Oh, hello!"</span>
+<span class="k">end</span>
+
+<span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"hello!"</span> <span class="p">}</span>
+</code></pre></div>
+<p>Both statements define a block, which is passed to the method <code>times</code>. And
+both blocks contain a single line of code.</p>
+
+<p class="hint">
+Blocks can be defined enclosing code in <code>do</code> and <code>end</code>,
+or curly braces <code>{}</code>.
+</p>
+
+<p>So, when do you use one or the other syntax?</p>
+
+<p>In the Ruby community there&rsquo;s the convention to use curly braces if you have a
+single line block and it fits nicely on the same line (as, in our example, it
+does).</p>
+
+<p>Whenever you need to have more than one line in your block, then you use the
+syntax using <code>do</code> and <code>end</code>. Sometimes people also use the <code>do</code> and <code>end</code>
+syntax when they feel it makes the code more readable.</p>
+
+<p class="hint">
+Use curly braces <code>{}</code> for blocks, when the code fits on one line.
+</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

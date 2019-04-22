@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#text-editor">Text Editor</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Text Editor</h1>
+
+<p>For our study groups we recommend using <a href="http://www.sublimetext.com">Sublime Text</a>
+as a text editor, which you can download and run on Mac OSX, Ubuntu, or
+Windows. This is an editor that has been specifically designed for writing
+code, comes with a lot of great tools, and can be easily customized.</p>
+
+<p>Other text editors that might be worth looking at are Atom, Textmate 2, and, if
+you like to use some of the powerful oldschool tools from the early times of
+Unix, VIM and Emacs. These are all great editors to use.</p>
+
+<p>Whatever editor you use, you want it to insert 2 spaces when you hit the &ldquo;tab&rdquo;
+key, i.e. when you want to indent your code. Make sure your editor is
+configured to do this.</p>
+
+<p>For Sublime Text you can do the following: In the menu item &ldquo;Sublime Text&rdquo; go
+to &ldquo;Preferences&rdquo; and select &ldquo;Settings - User&rdquo;. This opens up a configuration
+file that you can edit just like any other file. Make sure it looks like this:</p>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Also, we recommend enabling auto-saving your files. This will automatically
+save your changes when you switch to another application (like your terminal),
+and protect you from the mistake of forgetting to save:</p>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"save_on_focus_lost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Whenever you open a new file, make sure to save it with a filename that ends
+with <code>.rb</code> first. This will tell the editor that you want this to be a Ruby
+file. Your editor will start highlighting your code as Ruby code, and enable other
+Ruby specific editor features. Alternatively, select &ldquo;Ruby&rdquo; in the extensions
+menu at the bottom right.</p>
+
+<p>Some keyboard shortcuts that are extremely useful to know are:</p>
+
+<ul>
+<li>In order to indent or unindent a single, or multiple lines of code, select
+them and hit <code>tab</code> or <code>shift-tab</code> respectively.</li>
+<li>In order to comment single, or multiple lines of code, select them, and
+hit <code>cmd-/</code> on Mac OSX, or <code>ctrl-/</code> on Linux/Windows.</li>
+<li>Cut out code with <code>cmd-x</code>, copy code with <code>cmd-c</code>, and paste it with
+<code>cmd-v</code> on Mac OSX, on Linux/Windows use the <code>ctrl</code> key instead.</li>
+</ul>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

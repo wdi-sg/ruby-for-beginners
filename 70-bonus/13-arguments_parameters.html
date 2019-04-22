@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#terminology-arguments-vs-parameters">Terminology: Arguments vs Parameters</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Terminology: Arguments vs Parameters</h1>
+
+<p>We should mention that we are slightly simplifying terminology here. We
+conflate two terms that normally would be defined separately: We simply use the
+term &ldquo;argument&rdquo; for both the variable names that are defined in the arguments
+list of the method definition, and the value that is passed as part of the
+method call.</p>
+
+<p>In programming, normally the &ldquo;argument list&rdquo; is called a &ldquo;parameter list&rdquo;
+instead, and a single name on it is called a &ldquo;parameter&rdquo;. On the other hand,
+only the objects passed when calling the method are referred to as &ldquo;arguments&rdquo;.</p>
+
+<p>E.g. in the code &hellip;</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>&hellip; the word <code>number</code> in the first line is a &ldquo;parameter&rdquo;, whereas <code>3</code> in the
+last line is an &ldquo;argument&rdquo;.</p>
+
+<p>We found making this distinction in our beginners classes unnecessarily
+confusing, and thus ignore it. We simply call both these things &ldquo;arguments&rdquo;,
+and point out that they create a local variable inside of the method body.</p>
+
+<p>So, now you know :)</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#working-with-nested-arrays">Working with Nested Arrays</a>
+<ul>
+<li>
+<a href="#exercise-7-1">Exercise 7.1</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#your-code-goes-here">your code goes here</a>
+<ul>
+<li>
+<a href="#exercise-7-2">Exercise 7.2</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#your-code-goes-here">your code goes here</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Working with Nested Arrays</h1>
+
+<p>Note: At the moment these exercises require reading up until &ldquo;Block return values&rdquo;.
+You should know how to use the method <code>collect</code> on arrays.</p>
+
+<p>Before you get started, make sure you have your text editor and terminal open, and
+you have navigated to your exercises directory in the terminal. E.g. <code>cd
+~/ruby-for-beginners/exercises</code>.</p>
+
+<h2>Exercise 7.1</h2>
+
+<p>Make a new file <code>nested_arrays-1.rb</code>, and fill in the following line:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># your code goes here</span>
+<span class="nb">p</span> <span class="n">sums</span>
+</code></pre></div>
+<p>So that you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
+</code></pre></div>
+<p><a href="/solutions/nested_arrays-1.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 7.2</h2>
+
+<p>Make a new file <code>nested_arrays-2.rb</code>, and fill in the following line:</p>
+
+<p>Fill in the following line</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># your code goes here</span>
+<span class="n">lines</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">line</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">line</span> <span class="p">}</span>
+</code></pre></div>
+<p>So that you get the following output:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>* ** ***
+** ** **
+*** ** *
+</code></pre></div>
+<p><a href="/solutions/nested_arrays-2.html" class="solution">Show solution</a></p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

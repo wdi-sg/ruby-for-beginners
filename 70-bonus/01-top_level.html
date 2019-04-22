@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#top-level-object">Top-level object</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Top-level object</h1>
+
+<p>So, we&rsquo;ve learned that objects come with lots of methods attached to them.  And
+we&rsquo;ve seen how we can use them to do interesting things with the object, by the
+way of calling these methods.</p>
+
+<p>Now, if you pop into <code>irb</code>, or if you write the following code into an otherwise
+empty Ruby file, this works:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">is_a?</span><span class="p">(</span><span class="no">Object</span><span class="p">)</span>
+<span class="kp">true</span>
+<span class="o">&gt;</span> <span class="nb">methods</span>
+<span class="p">[</span><span class="ss">:to_s</span><span class="p">,</span> <span class="ss">:inspect</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span>
+</code></pre></div>
+<p>So, as you can see we can use some methods in Ruby without even defining an
+object at all: They&rsquo;re already there. And the method <code>is_a?</code> tells us that this
+already is an object &hellip; whatever &ldquo;this&rdquo; is.</p>
+
+<p>What&rsquo;s up with that?</p>
+
+<p>This is something that pretty much blows some people&rsquo;s minds, confuses the heck
+out of others, while yet others don&rsquo;t even notice or think about it at all. It
+is also something, that, when you ask around on your local Ruby meetup, very
+few people can explain in a satisfying, and clear way. And neither do we, yet.</p>
+
+<p>Let&rsquo;s still try.</p>
+
+<p>Whenever you open IRB and it presents that prompt to you, or when you create a
+new, empty Ruby file &hellip; Ruby will not only execute your code: Before she does
+she first creates an empty, anonymous Object, and kind of places you inside of
+it.</p>
+
+<p>This empty Object kind of seems invisible, and it seems that those methods
+that we can define in this scope (space) were somehow &ldquo;standing alone&rdquo;. In fact
+they aren&rsquo;t. They&rsquo;re defined on this empty, anonymous Object that we usually
+don&rsquo;t see.</p>
+
+<p>This Object often is referred to as the <em>top-level scope</em> in Ruby.</p>
+
+<p class="hint">
+The top-level scope is an empty, anonymous object. All Ruby code starts in here.
+</p>
+
+<p>Confusing? Yeah. Don&rsquo;t worry. This is something many Ruby programmers do and
+use everyday without ever asking the question why it works, exactly.</p>
+
+<p>Hopefully some of this will become more clear once you&rsquo;ve written your
+own methods and classes.</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

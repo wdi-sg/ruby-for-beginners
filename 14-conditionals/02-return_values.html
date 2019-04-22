@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#conditionals-return-values">Conditionals return values</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h2>Conditionals return values</h2>
+
+<p>Another extremely useful aspect about <code>if</code> and <code>unless</code> statements in Ruby is
+that they return values.</p>
+
+<p>Yes, that&rsquo;s right:</p>
+
+<p>An <code>if</code> statement, with all of its branches, as a whole, evaluates to the value
+returned by the statement that was last evaluated, just like a method does.</p>
+
+<p>For example, instead of this:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">if</span> <span class="n">number</span><span class="p">.</span><span class="nf">even?</span>
+  <span class="nb">puts</span> <span class="s2">"The number is even"</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"The number is odd"</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>we can also assign the return value of the <code>if</code> statement to a variable, and
+then output it:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">message</span> <span class="o">=</span> <span class="k">if</span> <span class="n">number</span><span class="p">.</span><span class="nf">even?</span>
+  <span class="s2">"The number is even"</span>
+<span class="k">else</span>
+  <span class="s2">"The number is odd"</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">message</span>
+</code></pre></div>
+<p>Also, for the same reason, if we define a method that contains nothing but a
+single <code>if</code>/<code>else</code> statement, the method will, again, return the last statement
+evaluated:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">message</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">number</span><span class="p">.</span><span class="nf">even?</span>
+    <span class="s2">"The number is even"</span>
+  <span class="k">else</span>
+    <span class="s2">"The number is odd"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">message</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">message</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>The first method call <code>message(2)</code> will output <code>The number is even</code>, and the
+second one <code>message(3)</code> will output <code>The number is odd</code>.</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

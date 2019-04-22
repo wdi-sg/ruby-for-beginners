@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#attribute-readers">Attribute readers</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Attribute readers</h1>
+
+<p><em>Asking for information</em></p>
+
+<p>Remember how we initially said that people have the ability to remember their
+name, and tell it, when asked?</p>
+
+<p>We&rsquo;ve already implemented the first part of this. Our person instance now
+knows her name &ldquo;Ada&rdquo;.</p>
+
+<p>Let&rsquo;s look at the second part. You also remember that methods are either
+questions or commands. We want to add a method that implements answering
+the question &ldquo;What&rsquo;s your name?&rdquo;.</p>
+
+<p>And it is as simple as this:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Before we discuss what this does, let&rsquo;s look at how we can use our new method.
+We can now call the method on the person object, like this:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">person</span><span class="p">.</span><span class="nf">name</span>
+</code></pre></div>
+<p>So this prints the name <code>Ada</code>, and that&rsquo;s what we want: we can create a new
+person object, passing a name to it. Once that person has been created we are
+able to ask for its name, and we&rsquo;ll get the name back.</p>
+
+<p>How does this work, exactly, under the microscope?</p>
+
+<p>Let&rsquo;s walk through it, step by step:</p>
+
+<ul>
+<li><p>On the first line, the object that ends up being assigned to the variable
+<code>person</code> is an initialized, new instance of the class <code>Person</code>. By
+&ldquo;intialized&rdquo; we mean that the method <code>initialize</code> has already been called,
+and it already has assigned the string <code>&quot;Ada&quot;</code> to the instance variable
+<code>@name</code>.</p></li>
+<li><p>Now this person object has the method <code>name</code>, as defined in the class
+definition of <code>Person</code> above, and in the second line we call this method:
+<code>person.name</code>.</p></li>
+<li><p>When the method <code>name</code> is called, it does nothing else but evaluate the
+instance variable <code>@name</code> from the object scope. Because this has previously
+been set to <code>&quot;Ada&quot;</code> it will return this string. And because this is the last
+line in the method <code>name</code> the method also will return this string.</p></li>
+<li><p>For that reason the method call <code>person.name</code> returns the string <code>&quot;Ada&quot;</code>,
+which is then passed to <code>puts</code>, which prints it out.</p></li>
+</ul>
+
+<p>Methods that do nothing else but return a value assigned to an instance
+variable with the same name are very common.</p>
+
+<p>In fact they are so common that there&rsquo;s a word for them: they are called
+&ldquo;attribute readers&rdquo;. By &ldquo;attribute&rdquo; the Ruby community means an instance
+variable, so an attribute reader is a method that reads an instance variable.</p>
+
+<p class="hint">
+An attribute reader returns the value of an instance variable.
+</p>
+
+<p>Another way of looking at this is that an attribute reader is a method that
+&ldquo;exposes&rdquo; an instance variable. It makes it accessible for others. I.e. it
+allows you to ask for the value of an instance variable with the same name, and
+does nothing but return its value. Once defined others can ask this object for
+knowledge that otherwise would be private, and unaccessible.</p>
+
+<p>In our case the attribute reader <code>name</code> exposes the instance variable <code>@name</code>,
+so others can ask for it.</p>
+
+<p class="hint">
+An attribute reader exposes an instance variable.
+</p>
+
+<p>We don&rsquo;t know why the community has chosen to use the term &ldquo;attribute&rdquo; here:
+It would be much less confusing to use the term &ldquo;instance variable reader&rdquo;
+instead. Maybe the simple reason is that programmers don&rsquo;t like to type more
+than necessary, and this saves 8 characters. Who knows :)</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

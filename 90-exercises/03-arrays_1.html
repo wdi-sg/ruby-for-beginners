@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#working-with-arrays-1">Working with Arrays (1)</a>
+<ul>
+<li>
+<a href="#exercise-3-1">Exercise 3.1</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#your-code-goes-here">your code goes here</a>
+<ul>
+<li>
+<a href="#exercise-3-2">Exercise 3.2</a>
+</li>
+<li>
+<a href="#exercise-3-3">Exercise 3.3</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#your-code-goes-here">your code goes here</a>
+<ul>
+<li>
+<a href="#exercise-3-4">Exercise 3.4</a>
+</li>
+<li>
+<a href="#exercise-3-5">Exercise 3.5</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Working with Arrays (1)</h1>
+
+<p>Before you get started, make sure you have your text editor and terminal open,
+and you have navigated to your exercises directory in the terminal. E.g. <code>cd
+~/ruby-for-beginners/exercises</code>.</p>
+
+<h2>Exercise 3.1</h2>
+
+<p>Create a new, empty file. Save it as <code>arrays_1-1.rb</code>. Fill in the following
+line:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="c1"># your code goes here</span>
+</code></pre></div>
+<p>So that, when you run your code (run <code>ruby arrays_1-1.rb</code>), you get the
+following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="mi">5</span>
+</code></pre></div>
+<p><a href="/solutions/arrays_1-1.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.2</h2>
+
+<p>Copy your file to a new file: <code>cp arrays_1-1.rb arrays_1-2.rb</code>, then open this
+new file.</p>
+
+<p>Add another line <em>before the line that you just added</em>, so that, when you run
+your code, you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="mi">99</span>
+</code></pre></div>
+<p><a href="/solutions/arrays_1-2.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.3</h2>
+
+<p>Make a new file <code>arrays_1-3.rb</code>, and fill in the following line:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="c1"># your code goes here</span>
+<span class="nb">p</span> <span class="n">numbers</span>
+</code></pre></div>
+<p>So that you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</code></pre></div>
+<p class="hint">
+Read the documentation for the method <code>select</code> that you can use on arrays
+on the <a href="http://www.ruby-doc.org/core-2.2.0/Array.html#method-i-select">Ruby documentation</a>
+</p>
+
+<p><a href="/solutions/arrays_1-3.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.4</h2>
+
+<p>Again, copy your last file to a new file: <code>cp arrays_1-3.rb arrays_1-4.rb</code>,
+then open this new file.</p>
+
+<p>Now change the code that you just added so that you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+<p class="hint">
+The method <code>select</code> that you used in the last exercise returns an array.
+On this array (the return value) you can use another method, by, again, just
+appending a dot <code>.</code> and the method name to it, i.e., to the end of the line.
+</p>
+
+<p class="hint">
+There is another method that reverses the order of the array. You can
+find it by googling for &ldquo;ruby array reverse&rdquo;.
+</p>
+
+<p><a href="/solutions/arrays_1-4.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.5</h2>
+
+<p>Again, copy your last file to a new file: <code>cp arrays_1-4.rb arrays_1-5.rb</code>,
+then open this new file.</p>
+
+<p>Now change your code so that you get the following output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+<p>Bonus: Find at least three different solutions for this last change.</p>
+
+<p><a href="/solutions/arrays_1-5.html" class="solution">Show solution</a></p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

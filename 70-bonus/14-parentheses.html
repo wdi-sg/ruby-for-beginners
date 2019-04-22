@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#arguments-and-parentheses">Arguments and parentheses</a>
+<ul>
+<li>
+<a href="#methods-without-arguments">Methods without arguments</a>
+</li>
+<li>
+<a href="#returning-nil">Returning nil</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Arguments and parentheses</h1>
+
+<p>If you have read carefully, you may have noticed that we said about the code
+<code>puts 5</code> that <code>puts</code> is a method call. And then later we&rsquo;ve enclosed the value
+<code>3</code> in parentheses when calling the method: <code>add_two(3)</code>.</p>
+
+<p>That&rsquo;s right:</p>
+
+<p class="hint">
+In Ruby, when you define or call (execute, use) a method, you can omit the
+parentheses.
+</p>
+
+<p>So these lines mean exactly the same:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="nb">puts</span> <span class="s2">"Hello!"</span>
+<span class="nb">puts</span><span class="p">(</span><span class="s2">"Hello!"</span><span class="p">)</span>
+</code></pre></div>
+<p>And so do these:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">add_two</span> <span class="mi">2</span>
+<span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p>And all of these:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="nb">puts</span> <span class="n">add_two</span> <span class="mi">2</span>
+<span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">puts</span><span class="p">(</span><span class="n">add_two</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">puts</span><span class="p">(</span><span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+<p>So when do you use parentheses, and when do you omit them?</p>
+
+<p>There is no clear rule about this, but there are some conventions. For now,
+you can just stick with the convention we are using at our study groups, which
+is:</p>
+
+<ul>
+<li>Use parentheses for all method calls that take arguments, except for the
+methods <code>puts</code> and <code>p</code> (and later: <code>require</code> and <code>include</code>).</li>
+<li>If a method does not take any arguments, then do not add empty parentheses,
+omit them.</li>
+</ul>
+
+<p>So the idiomatic way to write the line above is:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<h2>Methods without arguments</h2>
+
+<p>Also, so far we&rsquo;ve only mentioned that sometimes methods do not take any arguments.
+But we haven&rsquo;t looked at an example so far.</p>
+
+<p>Here&rsquo;s one:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">greet</span>
+  <span class="nb">puts</span> <span class="s2">"Oh, hello!"</span>
+<span class="k">end</span>
+
+<span class="n">greet</span>
+</code></pre></div>
+<p>The first three lines define a method, and we&rsquo;ve picked the name <code>greet</code> for it.
+Again, the method body contains just a single line.</p>
+
+<p>The last line consists of nothing but the word <code>greet</code>. When Ruby runs this code,
+and it finds the word <code>greet</code> it will know that this refers to the method defined
+earlier, and call it.</p>
+
+<p>So Ruby jumps into the method body (this time it does not bring any objects with
+it as arguments, because our method does not need any). It then executes the line
+<code>puts &quot;Oh, hello!&quot;</code> which prints a greeting to the screen.</p>
+
+<p>As you can see we do not use any parentheses here. We could do that. The following
+code would be perfectly valid, and do exactly the same:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">()</span>
+  <span class="nb">puts</span> <span class="s2">"Oh, hello!"</span>
+<span class="k">end</span>
+
+<span class="n">greet</span><span class="p">()</span>
+</code></pre></div>
+<p>However since we can omit the parentheses in this case we do just that. They
+just add visual noise and make the code slightly less readable.</p>
+
+<h2>Returning nil</h2>
+
+<p>Also, you might wonder what&rsquo;s going on with the return value our our <code>greet</code>
+method. We just said that every method call always returns &ldquo;something&rdquo; (an
+object).</p>
+
+<p>That&rsquo;s right. The method call <code>greet</code> will return the object returned from the
+last evaluated statement (which, in our case, is <code>puts &quot;Oh, hello!&quot;</code>).</p>
+
+<p>What do you think that is?</p>
+
+<p>The method <code>puts</code> always returns <code>nil</code> (because it was written that way): Its
+purpose is to print something to the screen, not return something interesting.
+It&rsquo;s a <a href="/bonus/questions_commands.html">command, not a question</a>. So the most
+sensible choice for a return value is <code>nil</code>.</p>
+
+<p>So where does the <code>nil</code> object go?</p>
+
+<p>If you look at our example code you notice that we don&rsquo;t do anything with the
+return value of the method call <code>greet</code>: We don&rsquo;t assign it to a variable. And
+we don&rsquo;t pass it to another method call. In fact, we simply discard it since
+we&rsquo;re not interested it in.</p>
+
+<p>In our example that&rsquo;s just fine. In practice you should always be aware <em>why</em>
+you are calling a certain method. Is it a command like <em>Please print this</em>?
+Then you probably aren&rsquo;t interested in the return value and you can discard
+it as we&rsquo;ve done above. Or is it a more like a question <em>What&rsquo;s the result
+when you add 2 to this number?</em> In that case obviously you want to use
+the return value later.</p>
+
+<p>For the sake of demonstrating that <code>puts</code> and <code>greet</code> indeed return <code>nil</code>
+we can use <code>p</code> to inspect the return value like so:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="k">def</span> <span class="nf">greet</span>
+<span class="o">&gt;</span>   <span class="nb">puts</span> <span class="s2">"Oh, hello!"</span>
+<span class="o">&gt;</span> <span class="k">end</span>
+<span class="o">&gt;</span> <span class="nb">p</span> <span class="n">greet</span>
+<span class="no">Oh</span><span class="p">,</span> <span class="n">hello!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre></div>
+<p>Here we go. The <code>=&gt;</code> thing in IRB signals that this is the return value. As you
+can see it first prints the greeting (using <code>puts</code>) and then, after returning
+from the method, outputs the <code>nil</code> value.</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

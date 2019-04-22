@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#reusing-variable-names">Reusing variable names</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Reusing variable names</h1>
+
+<p>It is also important to keep in mind that a name is unique, in the sense that
+the same name can only be assigned to one value (object) at a time.</p>
+
+<p>In other words, if you assign different values to the same variable, then
+assignments that happen later will simply overwrite previous ones. Like so:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nb">puts</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+</code></pre></div>
+<p>This, again, would output <code>14</code>.</p>
+
+<p class="hint">
+Variable names can be re-used, and re-assigned.
+</p>
+
+<p>The first line assigns the name <code>number</code> to the number <code>4</code>. The second line
+re-assigns it to another object.</p>
+
+<p>Getting back to our post-its metaphor &hellip; this would stick a post-it with the
+name <code>number</code> on one thing, and then later take it off of it, and stick it on
+something else.</p>
+
+<p>Let&rsquo;s look at it under the microscope:</p>
+
+<ul>
+<li>On the <strong>first line</strong> Ruby creates the number (object) <code>4</code>.</li>
+<li>It then assigns the name <code>number</code> to it (sticks a post-it onto it).</li>
+<li>On the <strong>second line</strong>, Ruby first looks at the stuff on the right side,
+and evaluates the expression <code>number * 3</code>. Doing so it will create
+the number (object) <code>3</code> and multiply it with the object that currently has
+the name <code>number</code>, which is <code>4</code>. This operation results in a new number
+(object) <code>12</code>.</li>
+<li>Now Ruby is finally ready to stick the name <code>number</code> on the result <code>12</code>.
+I.e. <em>from now on</em> the name <code>number</code> refers to a different object, which is
+<code>12</code>.</li>
+<li>On the <strong>third line</strong> Ruby will, again, first look at the expression <code>number + 2</code>
+on the right. It creates the object <code>2</code> and adds it to the object that currently
+has the name <code>number</code>. This results in a new number (object) <code>14</code>.</li>
+<li>Finally Ruby passes this object <code>14</code> to <code>puts</code>, which outputs it to the
+screen.</li>
+</ul>
+
+<p>Of course, you would probably never actually write this exact code in practice
+since you can simply do all this in just one line instead: <code>puts 4 * 3 + 2</code>.</p>
+
+<p>However, sometimes you&rsquo;ll find or write code that assigns an initial value to a
+variable, and then keeps working on it for a few more lines. This sometimes is
+useful to break up long lines, and make code more readable.</p>
+
+<p class="hint">
+Using variable names can be useful to break up long lines and make code more
+expressive and readable.
+</p>
+
+<p>Also, Ruby has different kinds of variables.</p>
+
+<p>The kind of variable that we&rsquo;ve introduced so far is called a <em>local variable</em>,
+and it&rsquo;s the one used most often. You will learn about another type of
+variables later when we talk about classes and objects.</p>
+
+<p class="hint formatting">
+On formatting: Note that there are spaces around the assignment operator `=`
+as well as the arithmetical operators `+` and `*`.
+</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

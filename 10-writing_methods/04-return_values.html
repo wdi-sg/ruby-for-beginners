@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#return-values">Return values</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Return values</h1>
+
+<p>In Ruby, a method always return exactly one single thing (an object).</p>
+
+<p>The returned object can be anything, but a method can only return one thing,
+and it also <em>always returns something</em>.</p>
+
+<p class="hint">
+Every method always returns exactly one object.
+</p>
+
+<p>The object returned could be the object <code>nil</code>, meaning &ldquo;nothing&rdquo;, but it still
+is an object.  Also, in order to return a bunch of things at once we could
+return an Array that holds the things that we are interested in, but the Array
+itself is just one object.</p>
+
+<p>Also note that in Ruby we do not have to use the statement <code>return</code>, as in
+other languages. In fact, most Ruby code does not use the keyword <code>return</code> at
+all.</p>
+
+<p>This is extremely convenient, but it is also something we need to learn:</p>
+
+<p>If we don&rsquo;t do anything else, then a method will return <em>the value that was
+returned from the last evaluated statement</em>. Most often, this is the last line
+in the method body.</p>
+
+<p>This is important to understand. Please read that sentence again:</p>
+
+<p><p class="hint">
+If we don&rsquo;t do anything else, then a method will return the return value of
+the last evaluated statement.
+<p></p>
+
+<p>In our example method &hellip;</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+
+<span class="nb">p</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>&hellip; the last evaluated statement is the expression <code>number + 2</code>. Since in our
+example <code>number</code> is assigned <code>3</code> this expression returns the number <code>5</code>, and
+that is why the value returned by our method also is <code>5</code>.</p>
+
+<p>If, in certain cases, we do want to &ldquo;return&rdquo; from the method early, then we can
+still do this using the <code>return</code> statement. For now, you don&rsquo;t need to worry
+about this case.</p>
+
+<p>So, let&rsquo;s move on :)</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#passing-arguments">Passing arguments</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Passing arguments</h1>
+
+<p><em>Extra information needed</em></p>
+
+<p>Sometimes an object needs a
+little bit of extra information in order to do what you ask for.</p>
+
+<p>For example the class <code>String</code> defines the method <code>delete</code> which returns
+another String with some of the characters deleted. In order to do so, of
+course, it needs to know which characters we&rsquo;d like to remove.</p>
+
+<p>We can pass things by appending parentheses <code>()</code> to the method call (the name).
+We can then include the extra bit of information needed (in our case another
+string) inside the parentheses like so:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"by Mo"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="s2">"Runstas"</span>
+</code></pre></div>
+<p>Hm. Not sure what &ldquo;Runstas&rdquo; means. Ideas? Let us know.</p>
+
+<p>Anyhow, another example for a method that needs an argument is the method
+<code>prepend</code> on Strings. This method returns a new String with the given String
+prepended:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">prepend</span><span class="p">(</span><span class="s2">"Oh, hello, "</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="s2">"Oh, hello, Ruby Monstas"</span>
+</code></pre></div>
+<p>These extra bits of information are called <em>arguments</em>. We&rsquo;ll discuss them more
+once we get to define <a href="/writing_methods.html">our own methods</a>.</p>
+
+<p>Not all methods need these extra bits of information (arguments) in order to do
+their job.  E.g. the method <code>length</code> on Strings knows the length of their
+String just so (because it knows its String). Sometimes they need one or more
+arguments though.</p>
+
+<p>So how do you know?</p>
+
+<p>You might remember, over time, for some important methods, but most of us also
+check the documentation quite frequently, too. Some times it&rsquo;s just fine to
+try it out quickly, and only check the documentation if it does not work as
+expected.</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>

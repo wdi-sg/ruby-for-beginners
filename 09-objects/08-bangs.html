@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ruby for Beginners">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../assets/stylesheets/monstas-cd25157c.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-870787d6.png" />
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+<li>
+<a href="#bang-methods">Bang Methods</a>
+</li>
+</ul>
+
+
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Bang Methods</h1>
+
+<p>All of the examples that we&rsquo;ve discussed before have one thing in common:</p>
+
+<p>They are questions, and do not modify the object they are called on.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="nb">puts</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase</span>
+<span class="nb">puts</span> <span class="nb">name</span>
+</code></pre></div>
+<p>This will output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">ruby</span> <span class="n">monstas</span>
+<span class="no">Ruby</span> <span class="no">Monstas</span>
+</code></pre></div>
+<p>As you can see the method <code>downcase</code> has returned a new String, which is the
+lowercase version of the String that the method is being called on. When we
+output the original String on the next line, we can then see that it&rsquo;s still
+the same: The method <code>downcase</code> does not modify the String.</p>
+
+<p>However, there also are variants of some of these methods, which end in an
+exclamation mark <code>!</code>. These methods are called &ldquo;bang methods&rdquo;, and they usually
+modify the object that they&rsquo;re being called on.</p>
+
+<p class="hint">
+Bang methods end with an exlamation mark, and often modify the object they are called on.
+</p>
+
+<p>For example, next to the method <code>downcase</code> Strings also have a method <code>downcase!</code>.</p>
+
+<p>Let&rsquo;s try that:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="nb">puts</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase!</span>
+<span class="nb">puts</span> <span class="nb">name</span>
+</code></pre></div>
+<p>This will output:</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">ruby</span> <span class="n">monstas</span>
+<span class="n">ruby</span> <span class="n">monstas</span>
+</code></pre></div>
+<p>As you can see calling the method <code>downcase!</code> on the second line has modified
+the String itself (the object that <code>name</code> refers to), and <em>also</em> returned the
+new downcased version.</p>
+
+<p>Nowadays programmers have learned that using these methods has a number of
+disadvantages, and usually should be avoided, unless there are very good
+reasons for it (usually, there are none).</p>
+
+<p class="hint">
+Use bang methods with caution.
+</p>
+
+<p>We mostly mention these methods because you might see them used elsewhere.</p>
+
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-16671e9f.js"></script>
+    <script src="../assets/javascripts/monstas-83702c28.js"></script>
+  </body>
+</html>
