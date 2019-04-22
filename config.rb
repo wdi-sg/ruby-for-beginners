@@ -22,6 +22,7 @@ set :markdown, :fenced_code_blocks => true,
   :no_intra_emphasis => true,
   :autolink => true,
   :strikethrough => true,
+  #:with_toc_data: true,
   :tables => true
 
 
