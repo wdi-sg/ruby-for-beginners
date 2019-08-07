@@ -21,7 +21,7 @@ following output:
 5
 ```
 
-<a href="/solutions/arrays_1-1.html" class="solution">Show solution</a>
+<a href="../solutions/03-arrays_1-1.html.md" class="solution">Show solution</a>
 
 ## Exercise 3.2
 
@@ -35,7 +35,7 @@ your code, you get the following output:
 99
 ```
 
-<a href="/solutions/arrays_1-2.html" class="solution">Show solution</a>
+<a href="../solutions/03-arrays_1-2.html.md" class="solution">Show solution</a>
 
 ## Exercise 3.3
 
@@ -55,10 +55,10 @@ So that you get the following output:
 
 <p class="hint">
 Read the documentation for the method <code>select</code> that you can use on arrays
-on the <a href="http://www.ruby-doc.org/core-2.2.0/Array.html#method-i-select">Ruby documentation</a>
+on the <a href="https://www.ruby-doc.org/core-2.2.0/Array.html#method-i-select">Ruby documentation</a>
 </p>
 
-<a href="/solutions/arrays_1-3.html" class="solution">Show solution</a>
+<a href="../solutions/03-arrays_1-3.html.md" class="solution">Show solution</a>
 
 ## Exercise 3.4
 
@@ -82,7 +82,7 @@ There is another method that reverses the order of the array. You can
 find it by googling for "ruby array reverse".
 </p>
 
-<a href="/solutions/arrays_1-4.html" class="solution">Show solution</a>
+<a href="../solutions/03-arrays_1-4.html.md" class="solution">Show solution</a>
 
 ## Exercise 3.5
 
@@ -97,6 +97,6 @@ Now change your code so that you get the following output:
 
 Bonus: Find at least three different solutions for this last change.
 
-<a href="/solutions/arrays_1-5.html" class="solution">Show solution</a>
+<a href="../solutions/03-arrays_1-5.html.md" class="solution">Show solution</a>
 
 
