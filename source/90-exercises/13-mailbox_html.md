@@ -146,5 +146,5 @@ and working with arrays and strings. And this time, you don't need to deal with
 the maximum length of strings per column. You can just interpolate things
 together.
 
-<a href="/solutions/mailbox_html-1.html" class="solution">Show solution</a>
+<a href="/solutions/13-mailbox_html-1.html.md" class="solution">Show solution</a>
 

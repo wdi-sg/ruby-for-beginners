@@ -49,4 +49,4 @@ From:    Arianne
 Subject: Re: Homework this week
 ```
 
-<a href="/solutions/mailbox-1.html" class="solution">Show solution</a>
+<a href="../solutions/11-mailbox-1.html.md" class="solution">Show solution</a>

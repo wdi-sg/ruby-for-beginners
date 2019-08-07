@@ -24,7 +24,7 @@ In German, eins means one, zwei means two, drei means three.
 In Spanish, uno means one, duo means two, tres means three.
 ```
 
-<a href="/solutions/hashes_2-1.html" class="solution">Show solution</a>
+<a href="../solutions/08-hashes_2-1.html.md" class="solution">Show solution</a>
 
 
 ## Exercise 8.2
@@ -38,7 +38,7 @@ en one two three
 es uno dos tres
 ```
 
-<a href="/solutions/hashes_2-2.html" class="solution">Show solution</a>
+<a href="../solutions/08-hashes_2-2.html.md" class="solution">Show solution</a>
 
 
 ## Exercise 8.3
@@ -52,7 +52,7 @@ en one  two  three
 es uno  dos  tres
 ```
 
-<a href="/solutions/hashes_2-3.html" class="solution">Show solution</a>
+<a href="../solutions/08-hashes_2-3.html.md" class="solution">Show solution</a>
 
 
 ## Exercise 8.4
@@ -66,5 +66,5 @@ code so that it adds delimiters:
 | es | uno  | dos  | tres  |
 ```
 
-<a href="/solutions/hashes_2-4.html" class="solution">Show solution</a>
+<a href="../solutions/08-hashes_2-4.html.md" class="solution">Show solution</a>
 

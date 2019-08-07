@@ -21,4 +21,4 @@ the last exercise. When you open it in your browser it should look like this:
 
 ![image](https://cloud.githubusercontent.com/assets/2208/5602614/5ac2058c-935a-11e4-9c01-7ff9ec3b66cb.png)
 
-<a href="/solutions/mailbox_file-1.html" class="solution">Show solution</a>
+<a href="../solutions/14-mailbox_file-1.html.md" class="solution">Show solution</a>
