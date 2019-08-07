@@ -27,7 +27,7 @@ So that you get the following output:
 [6, 15, 24]
 ```
 
-<a href="/solutions/nested_arrays-1.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/nested_arrays-1.html" class="solution">Show solution</a>
 
 
 ## Exercise 7.2
@@ -54,5 +54,5 @@ So that you get the following output:
 *** ** *
 ```
 
-<a href="/solutions/nested_arrays-2.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/nested_arrays-2.html" class="solution">Show solution</a>
 

@@ -16,7 +16,7 @@ dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
 
 So that it prints out `dos`.
 
-<a href="/solutions/hashes_1-1.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/hashes_1-1.html" class="solution">Show solution</a>
 
 
 ## Exercise 4.2
@@ -31,7 +31,7 @@ puts dictionary[:four]
 
 So that it prints out `cuatro`.
 
-<a href="/solutions/hashes_1-2.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/hashes_1-2.html" class="solution">Show solution</a>
 
 
 ## Exercise 4.3
@@ -48,7 +48,7 @@ There's a method that upcases the first letter of a string. Find it by
 googling for "ruby string upcase first letter".
 </p>
 
-<a href="/solutions/hashes_1-3.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/hashes_1-3.html" class="solution">Show solution</a>
 
 
 ## Exercise 4.4
@@ -59,13 +59,13 @@ the hash.  Find that method by googling for "ruby hash key defined".
 Try this method in `irb` by creating a hash like the one above, calling the
 method and passing keys like `:one`, `:two`, `:four`, and `:ten`.
 
-<a href="/solutions/hashes_1-4.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/hashes_1-4.html" class="solution">Show solution</a>
 
 
 ## Exercise 4.5
 
 There is a method on hashes that flips keys and values. Find that method on the
-[Ruby documentation about hashes](http://www.ruby-doc.org/core-2.2.0/Hash.html)
+<a href="http://www.ruby-doc.org/core-2.2.0/Hash.html">Ruby documentation about hashes</a>
 
 Make a new file `hashes_1-5.rb`, and fill in the following line using that
 method:
@@ -81,4 +81,4 @@ This should then output:
 { 'uno' => :one, 'dos' => :two, 'tres' => :three }
 ```
 
-<a href="/solutions/hashes_1-5.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/hashes_1-5.html" class="solution">Show solution</a>

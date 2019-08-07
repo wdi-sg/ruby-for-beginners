@@ -88,4 +88,4 @@ formatter = MailboxHtmlFormatter.new(mailbox)
 # your code from the last exercise, writing the file
 ```
 
-<a href="../solutions/15-mailbox_csv-1.html.md" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/15-mailbox_csv-1.html" class="solution">Show solution</a>

@@ -21,8 +21,7 @@ is a very different concept, and concern.
 
 Therefore it makes a lot of sense to have three different classes implement each
 one of these concepts, or concerns. And it even makes *so* much sense that it is
-called a design principle in programming: The principle of [separation of
-concerns](http://www.wikiwand.com/en/Separation_of_concerns).
+called a design principle in programming: The principle of <a href="http://www.wikiwand.com/en/Separation_of_concerns">separation of concerns</a>.
 
 Aside from being comprehensible and mapping to concepts that we already know,
 one other advantage is: We can now easily implement other formatter classes
@@ -32,7 +31,7 @@ media.
 And that's what this exercise is about: We want to display our mailbox contents
 in HTML, the format that browsers like to use. If you are unfamiliar with what
 HTML is, and how it looks like, you can read up on it
-[here](http://webapps-for-beginners.rubymonstas.org/html.html).
+<a href="http://webapps-for-beginners.rubymonstas.org/html.html">here</a>.
 This will be our first step towards learning how to build a web application.
 
 ## Model, View, Controller
@@ -146,5 +145,5 @@ and working with arrays and strings. And this time, you don't need to deal with
 the maximum length of strings per column. You can just interpolate things
 together.
 
-<a href="/solutions/13-mailbox_html-1.html.md" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/13-mailbox_html-1.html" class="solution">Show solution</a>
 

@@ -24,7 +24,7 @@ So that you get the following output:
 ["one", "three", "five"]
 ```
 
-<a href="/solutions/arrays_2-1.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/arrays_2-1.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.2
@@ -42,7 +42,7 @@ Now change your code so that you get the following output:
 Google for <code>ruby string uppercase first letter</code>.
 </p>
 
-<a href="/solutions/arrays_2-2.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/arrays_2-2.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.3
@@ -60,7 +60,7 @@ Now change your code so that you get the following output:
 Use string interpolation for this.
 </p>
 
-<a href="/solutions/arrays_2-3.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/arrays_2-3.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.4
@@ -74,7 +74,7 @@ Now change your code so that you get the following output:
 ["One <3", "Three <3<3<3", "Five <3<3<3<3<3"]
 ```
 
-<a href="/solutions/arrays_2-4.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/arrays_2-4.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.5
@@ -89,7 +89,7 @@ now a string, not an array):
 One <3, Three <3<3<3, Five <3<3<3<3<3
 ```
 
-<a href="/solutions/arrays_2-5.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/arrays_2-5.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.6
@@ -106,7 +106,7 @@ Three <3<3<3
 Five <3<3<3<3<3
 ```
 
-<a href="/solutions/arrays_2-6.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/arrays_2-6.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.7
@@ -128,4 +128,4 @@ As you may guess, strings have a method that is helpful for this. Ask
 Google: "ruby string align".
 </p>
 
-<a href="/solutions/arrays_2-7.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/arrays_2-7.html" class="solution">Show solution</a>
