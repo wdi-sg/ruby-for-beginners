@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Calling methods | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/objects/methods.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/objects/arguments.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -169,7 +171,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/objects.html">
       Objects, Classes, Methods
     </a>
@@ -189,7 +191,7 @@
           Objects have methods
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/objects/calling.html">
           Calling methods
         </a>
@@ -583,32 +585,76 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Calling methods</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>In Ruby, methods that belong to (are defined on) objects can be used (called)
+by adding a dot, and then the method name, like so:</p>
+<pre class="highlight ruby"><code><span class="n">object</span><span class="p">.</span><span class="nf">method</span>
+</code></pre>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>That&rsquo;s like saying <em>Hey object, please do [method]</em>.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>Let&rsquo;s try that out in IRB.</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>For example, the class <code>String</code> defines methods like <code>upcase</code> (<em>Give me an
+uppercase version of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of
+yours</em>), and <code>length</code> (<em>Hey string, what&rsquo;s your length?</em>).</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>Here&rsquo;s how we can call them:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">upcase</span>
+<span class="o">=&gt;</span> <span class="s2">"RUBY MONSTAS"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase</span>
+<span class="o">=&gt;</span> <span class="s2">"ruby monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">12</span>
+</code></pre>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>And so on.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>In other words, you first address, or mention, the object that you want to talk
+to, and then, with the dot <code>.</code>, &ldquo;send a message&rdquo; to the object by specifying
+the method name. We also say: &ldquo;you call the method upcase on the string&rdquo;.</p>
+
+<p class="hint">
+A dot is used to call a method on an object.
+</p>
+
+<p>Imagine the string <code>name</code> is a person you can talk to. You can ask questions by
+&ldquo;sending a message&rdquo; to them, and they&rsquo;ll respond by sending (returning)
+something back. The term &ldquo;sending messages&rdquo; actually is used instead of
+&ldquo;calling a method&rdquo; in programming, and specifically in Ruby.</p>
+
+<p>So, you can ask the string to hand you an &ldquo;upcased&rdquo; version of itself. And
+it responds by doing so. Or you can ask it for its length, and it responds
+by returning the number <code>12</code> to you.</p>
+
+<p>You can have a look at all the methods that the class <code>String</code> defines
+(responds to) on Ruby&rsquo;s
+<a href="http://ruby-doc.org/core-2.2.0/String.html">documentation page for this class</a>.</p>
+
+<p>Most methods in Ruby work this way: You ask an object to return a bit of
+information about itself (such as a String&rsquo;s length), or a modified
+(transformed) version of itself (such as a downcased version of the String).</p>
+
+<p class="hint">
+Most methods are questions, and return a relevant value.
+</p>
+
+<p>Others modify the object itself, and some have so called side-effects, and
+modify something else, e.g. <code>puts</code> and <code>p</code> both output something to the
+screen. Other methods might save files, send emails, or store things to
+a database.</p>
+
+<p class="hint">
+Some methods are commands, and change the object, or the system (e.g. by saving a file).
+</p>
+
+        <nav class="page-nav"><a class="prev" href="/objects/methods.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/objects/arguments.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +674,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

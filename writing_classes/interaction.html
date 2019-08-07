@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Interacting Objects | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/writing_classes/state_and_behaviour.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/writing_classes/self.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -258,7 +260,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/writing_classes.html">
       Writing classes
     </a>
@@ -298,7 +300,7 @@
           State and behaviour
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/writing_classes/interaction.html">
           Interacting Objects
         </a>
@@ -583,32 +585,187 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Interacting Objects</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>We&rsquo;re now able to create our own objects. However, they don&rsquo;t do a whole lot,
+yet, right? Why not create two people, and let them greet each other.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Let&rsquo;s see.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>Here&rsquo;s what we&rsquo;d like to achieve:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="n">friend</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Carla"</span><span class="p">)</span>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<span class="n">person</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="n">friend</span><span class="p">)</span>
+</code></pre>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>We&rsquo;d like this to print out the following for starters:</p>
+<pre class="highlight ruby"><code><span class="no">Hi</span> <span class="no">Carla</span><span class="o">!</span>
+</code></pre>
+
+<p>If we run the code above we&rsquo;ll get an error message that tells us what to do next:</p>
+<pre class="highlight plaintext"><code>NoMethodError: undefined method `greet' for #&lt;Person:0x007fbb5e9c88c8 @name="Anja"&gt;
+</code></pre>
+
+<p>Right, we need to define a method <code>greet</code>. Let&rsquo;s do that:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># methods from above ...</span>
+
+  <span class="k">def</span> <span class="nf">greet</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>If we run this code, we&rsquo;ll now get a new error message. Great, that&rsquo;s progress:</p>
+<pre class="highlight plaintext"><code>ArgumentError: wrong number of arguments (1 for 0)
+</code></pre>
+
+<p>Right, how would one person greet another without knowing who that other person is?
+So we need to make our method accept an argument:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># methods from above ...</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>If we run this we won&rsquo;t see an error message any more. Yay! However, it also
+does not print anything so far - our method does not do anything, yet.</p>
+
+<p>Alright, let&rsquo;s add some actual behaviour, and print out &ldquo;Hi!&rdquo; for starters.</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># methods from above ...</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="s2">"Hi!"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>What happens when you run that? It works, right. This should output <code>Hi!</code> to the screen.</p>
+
+<p>However, how can Anja greet Carla, specifically? How can any person greet any
+other person? Well, the method knows the person to greet (she has been passed
+as an argument to the method) so she can ask her for her name:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># methods from above ...</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span> <span class="o">+</span> <span class="s2">"!"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Does this make sense?</p>
+
+<p>Let&rsquo;s have another look at the full code:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span> <span class="o">+</span> <span class="s2">"!"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="n">friend</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Carla"</span><span class="p">)</span>
+
+<span class="n">person</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="n">friend</span><span class="p">)</span>
+</code></pre>
+
+<p>So we instantiate two <code>Person</code> objects, and assign them two variables <code>person</code>
+and <code>friend</code>. Then we call the method <code>greet</code> on the first one (Anja), and
+pass the second one (<code>friend</code>, which is Carla) as an argument.</p>
+
+<p>Now Ruby jumps into the method body of the method <code>greet</code>, and assigns the
+local variable name <code>other</code> to the <code>Person</code> instance passed (i.e. Carla).</p>
+
+<p>It then asks the <code>Person</code> instance <code>other</code> for their name (which will return
+the String <code>&quot;Carla&quot;</code>, and concatenates it to (glues it together with) two other
+strings <code>&quot;Hi &quot;</code> and <code>&quot;!&quot;</code>. So this results in a new String <code>Hi Carla!</code> which it
+then passes to <code>puts</code>.</p>
+
+<p>Ok, let&rsquo;s spice that up a little, and let Anja add her own name to this String,
+too:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># methods from above ...</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Nice. This now outputs:</p>
+<pre class="highlight plaintext"><code>Hi Carla! My name is Anja.
+</code></pre>
+
+<p>Remember how you could call the method <code>add_one</code> from another method <code>add_two</code>
+<a href="/writing_methods/combining.html">before</a>? The same works here, too: We can
+call the person&rsquo;s own method <code>name</code> by just using it, since this method is
+defined on the same class, and thus every instance of <code>Person</code>. We&rsquo;ll look
+at this a little more in the <a href="/writing_classes/self.html">next chapter</a>.</p>
+
+<p>For now let&rsquo;s add another line at the end, and let Carla greet Anja back.</p>
+
+<p>Again, here&rsquo;s the full code:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="n">friend</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Carla"</span><span class="p">)</span>
+
+<span class="n">person</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="n">friend</span><span class="p">)</span>
+<span class="n">friend</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre>
+
+<p>And this outputs:</p>
+<pre class="highlight plaintext"><code>Hi Carla! My name is Anja.
+Hi Anja! My name is Carla.
+</code></pre>
+
+<p>What do you think?</p>
+
+<p>Of course this is still quite a simplistic example. It already shows how you
+can &ldquo;model&rdquo; a certain &ldquo;real-world&rdquo; concept in terms of Ruby code, instantiate
+it, and let it interact with another thing.</p>
+
+<p>By the way if you&rsquo;d like to see how to make the method <code>greet</code> more pretty,
+and a little bit easier to read, check out the chapter on
+<a href="/bonus/string_interpolation.html">String interpolation</a>.</p>
+
+        <nav class="page-nav"><a class="prev" href="/writing_classes/state_and_behaviour.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/writing_classes/self.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +785,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

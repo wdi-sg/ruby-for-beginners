@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Using Libraries (1) | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/advanced.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/advanced/modules.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -433,12 +435,12 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/advanced.html">
       Advanced Topics
     </a>
     <ul>
-      <li>
+      <li class="active">
         <a href="/advanced/libraries.html">
           Using Libraries (1)
         </a>
@@ -583,32 +585,89 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Using Libraries (1)</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>Our <code>Person</code> class does not define an attribute accessor method for its
+password, and thus, others cannot ask for and retrieve it.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>However, our person object could freely give them an encrypted version of it.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>Actually, this is pretty similar to how authentication often works in
+real web applications:</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>Applications do not store your actual password in plain text (hopefully!) That
+way if, for some reason, they get hacked, attackers wouldn&rsquo;t have your actual
+password. Instead they store an encrypted version of the password.</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>Anyhow, we now want to add a method <code>encrypted_password</code> to the <code>Person</code> class,
+which should return an <em>encrypted version</em> of the password that is stored in
+the instance variable <code>@password</code>.</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>Encryption is one of the things in programming that require very deep expert
+knowledge, and it is one of the things we definitely wouldn&rsquo;t want to implement
+ourselves.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>So far, all the Ruby features and methods that we have used are available right
+away when the Ruby runtime <code>ruby</code> executes your code. However, Ruby also comes
+with a ton of functionality that is not available (loaded) right away. Instead
+it is stored in so called libraries (which are just Ruby files, too), and we
+have to load them manually, in order to make them available.</p>
+
+<p>To do this, we use the method <code>require</code>, and pass it the name of the library:</p>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'digest'</span>
+</code></pre>
+
+<p>Normally <code>require</code> statements should be placed at the very top of the file, so
+it is easy to see what libraries a particular piece of code (class) uses.</p>
+
+<p>We are going to omit the <code>initialize</code> and <code>name</code> methods here, indicate the
+omission with the comment <code># ...</code>, and just keep the <code>password=</code> attribute
+writer. In order to run this code make sure you keep all the methods.</p>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'digest'</span>
+
+<span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># ...</span>
+
+  <span class="k">def</span> <span class="nf">password</span><span class="o">=</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+    <span class="vi">@password</span> <span class="o">=</span> <span class="n">password</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">encrypted_password</span>
+    <span class="no">Digest</span><span class="o">::</span><span class="no">SHA2</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">(</span><span class="vi">@password</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>The library <code>digest</code> that we required includes a something called
+<code>Digest::SHA2</code>.</p>
+
+<p>In programming a &ldquo;digest&rdquo; is an algorithm to convert one string into another
+in a way that the original string cannot be recovered later. However
+digesting the same string will always result in the same other, unique string.
+There are a good bunch of algorithms that do this, and &ldquo;sha2&rdquo; is the name of
+one of them.</p>
+
+<p>Ok. For our example here we only need to understand that, once we have
+required the library <code>digest</code>, we can use the method <code>Digest::SHA2.hexdigest</code>,
+and it will encrypt (&ldquo;digest&rdquo;) the string that we pass to it.</p>
+
+<p>If now run the following code:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">password</span> <span class="o">=</span> <span class="s2">"super secret"</span>
+<span class="nb">puts</span> <span class="n">person</span><span class="p">.</span><span class="nf">encrypted_password</span>
+</code></pre>
+
+<p>it will output</p>
+<pre class="highlight plaintext"><code>eabd522910ccdd77aef079feff0c7bb6486f6ab207ae6d3ed9e671208c92ab0f
+</code></pre>
+
+<p>which is the digested form of the string <code>&quot;super secret&quot;</code>. Every time you run
+the program you will see the same, unique string.</p>
+
+        <nav class="page-nav"><a class="prev" href="/advanced.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/advanced/modules.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +687,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

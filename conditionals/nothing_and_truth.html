@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Nothingness and the truth | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/conditionals.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/operators.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -342,12 +344,12 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/conditionals.html">
       Conditionals
     </a>
     <ul>
-      <li>
+      <li class="active">
         <a href="/conditionals/nothing_and_truth.html">
           Nothingness and the truth
         </a>
@@ -583,32 +585,157 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Nothingness and the truth</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>Now is a good time to talk about the concepts of nothingness and truth in Ruby.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<h4>Nil</h4>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>We have briefly mentioned that in Ruby there is an object that represents
+&ldquo;nothing&rdquo;: the object <code>nil</code>.</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>That&rsquo;s right. &ldquo;Nothing&rdquo; is a thing in Ruby (as well as in many other
+languages), albeit a very special one. We could ramble on the philosophical
+implications of this, but instead we&rsquo;ll just look at how this is used in
+practice:</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>Remember how we can receive a value associated with a key from a hash?</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="nb">p</span> <span class="n">dictionary</span><span class="p">[</span><span class="ss">:one</span><span class="p">]</span>
+</code></pre>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>This will print out <code>&quot;eins&quot;</code>. However, what happens if we try to receive
+the value for a key that has not been defined on the hash?</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="nb">p</span> <span class="n">dictionary</span><span class="p">[</span><span class="ss">:four</span><span class="p">]</span>
+</code></pre>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>This will print out <code>nil</code>. Remember that every method call always will return
+<em>some</em> value? In cases where there&rsquo;s nothing to return, it will return <code>nil</code>,
+which represents nothing :)</p>
+
+<p>In Ruby, <code>nil</code>, nothing, is something else than, for example, <code>0</code>, which
+represents <em>something</em>. An empty string <code>&quot;&quot;</code>, an empty array <code>[]</code>, or empty
+Hash <code>{}</code> also all represent <em>something</em>. So they&rsquo;re not <code>nil</code>.</p>
+
+<h4>True and false</h4>
+
+<p>We have also discussed that in order to represent truth, and the opposite of
+it, Ruby also knows the values <code>true</code> and <code>false</code>.</p>
+
+<p>You have seen them when we tried some of the methods on numbers, strings and
+arrays, like <code>3.odd?</code>, <code>&quot;a string&quot;.start_with?(&quot;a&quot;)</code>, or <code>[1, 2, 3].include?(2)</code>.</p>
+
+<p>These so called predicate methods always return either <code>true</code> or <code>false</code>.</p>
+
+<p class="hint">
+Predicate methods end with a question mark, and return <code>true</code> or
+<code>false</code>.
+</p>
+
+<p>The objects <code>nil</code>, <code>true</code>, and <code>false</code> also have classes, and you can check
+that in IRB yourself: <code>nil.class</code>, <code>true.class</code> and <code>false.class</code>.</p>
+
+<p>For a reason that we don&rsquo;t know Matz (the creator of Ruby) has decided to call
+these classes <code>NilClass</code>, <code>TrueClass</code> and <code>FalseClass</code>, instead of just <code>Nil</code>,
+<code>True</code> and <code>False</code>. If you ever meet him at a conference you can ask him :)</p>
+
+<h4>Truthiness and falsiness</h4>
+
+<p>Now, when we talked about <code>if</code> statements we used methods that actually return
+<code>true</code> and <code>false</code> values, like the <code>odd?</code> method on numbers does. Comparison
+operators like <code>==</code>, <code>&lt;</code> and <code>&gt;</code> also return <code>true</code> and <code>false</code>, as in:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">5</span>
+  <span class="nb">puts</span> <span class="s2">"The number </span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is greater than 5, or equal to 5"</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"The number </span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is less than 5"</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>However, what happens when we use methods as conditions that do not return
+<code>true</code> or <code>false</code>, but something else, for example a string, number, or <code>nil</code>?</p>
+
+<p>For example, consider the following:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="n">key</span> <span class="o">=</span> <span class="ss">:four</span>
+
+<span class="k">if</span> <span class="n">dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+  <span class="nb">puts</span> <span class="s2">"The dictionary defines a value for the key </span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">."</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"The dictionary does not define a value for the key </span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">."</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>As we saw before <code>dictionary[:four]</code> will return <code>nil</code> because this key is
+not defined. Is <code>nil</code> equivalent to <code>true</code> or <code>false</code>? Or will this raise
+an error?</p>
+
+<p>If you run the code above then you see that Ruby will execute the <code>else</code>
+branch. That means Ruby actually considers <code>nil</code> to be equivalent to <code>not
+true</code>, that is, <code>false</code>.</p>
+
+<p>Now, lets use a key that actually is defined:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="n">key</span> <span class="o">=</span> <span class="ss">:one</span>
+
+<span class="k">if</span> <span class="n">dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+  <span class="nb">puts</span> <span class="s2">"The dictionary defines a value for the key </span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">."</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"The dictionary does not define a value for the key </span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">."</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>As you saw before <code>dictionary[:one]</code> will return <code>&quot;eins&quot;</code>, because that&rsquo;s the
+value associated with the key <code>:one</code>. Again, do you think <code>&quot;eins&quot;</code> is
+equivalent to <code>true</code> or <code>false</code>? Or will this raise an error instead?</p>
+
+<p>If you run the code then you&rsquo;ll see that Ruby now executes the <code>if</code> branch, and
+considers the condition (i.e. the string <code>&quot;eins&quot;</code>) to be equivalent to <code>true</code>.</p>
+
+<p>Think about this for second: Ruby considers <em>everything</em> to be equivalent to
+<code>true</code> that is <em>not</em> <code>false</code> or <code>nil</code>. Or put the other way around, Ruby only
+considers <code>nil</code> to be equivalent to <code>false</code>.</p>
+
+<p>Because &ldquo;is equivalent to true&rdquo; or &ldquo;is equivalent to false&rdquo; is quite a clunky
+thing to repeat so often the programming community has come up with terms for
+this: truthiness and falsiness. So we can say that the string <code>&quot;eins&quot;</code> is
+truthy. And <code>nil</code> is the only other thing that is falsy in Ruby, except
+<code>false</code> itself.</p>
+
+<p>To sum this up, <code>if</code> and <code>unless</code> look at the truthiness of a the value
+that is returned by the condition. Everything except <code>false</code> and <code>nil</code> is
+truthy, including strings, numbers, arrays, hashes, and every other object.</p>
+
+<p>This also includes the number <code>0</code>, empty strings <code>&quot;&quot;</code>, arrays <code>[]</code> and hashes
+<code>{}</code>. These aren&rsquo;t nothing (<code>nil</code>), instead they&rsquo;re something, and therefore,
+in Ruby, truthy.</p>
+
+<p>Here&rsquo;s a pattern that you  might see used when you look at other people&rsquo;s code:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="n">key</span> <span class="o">=</span> <span class="ss">:one</span>
+<span class="n">translation</span> <span class="o">=</span> <span class="n">dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">translation</span>
+  <span class="nb">puts</span> <span class="s2">"The translation for </span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is: </span><span class="si">#{</span><span class="n">translation</span><span class="si">}</span><span class="s2">."</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"The dictionary does not define a translation for the key </span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">."</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>If you read this out loud, does it make sense to you?</p>
+
+<p>The code first looks up the translation from the <code>dictionary</code> hash. And then it
+says <em>If there&rsquo;s a translation, then use it. Otherwise do something else.</em></p>
+
+<p>Ruby&rsquo;s concept of truthiness allows us to write our code in this concise way
+that almost reads like English. And that&rsquo;s one reason why many people love Ruby
+so much.</p>
+
+        <nav class="page-nav"><a class="prev" href="/conditionals.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/operators.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +755,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

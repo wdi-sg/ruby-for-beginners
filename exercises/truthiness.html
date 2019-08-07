@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Truthiness | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/exercises/hashes_2.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/exercises/email.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -470,7 +472,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/exercises.html">
       Exercises (old)
     </a>
@@ -515,7 +517,7 @@
           Working with Hashes (2)
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/exercises/truthiness.html">
           Truthiness
         </a>
@@ -583,32 +585,96 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Truthiness</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<h2>Exercise 9.1</h2>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Make a new file <code>truthiness-1.rb</code>, and add the following lines:</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>This exercise is about validating what we&rsquo;ve learned about truthiness.</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>You have the following array:</p>
+<pre class="highlight ruby"><code><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="p">[],</span> <span class="no">Object</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span><span class="p">]</span>
+</code></pre>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>Add some code that outputs the following table. The last column should be
+filled in with by either <code>true</code> or <code>false</code> depending what the operation
+<code>!!object</code><code>, which is the same as</code>not not object` for each of the objects
+returns:</p>
+<pre class="highlight plaintext"><code>object                     | !!object
+true                       | [true|false]
+false                      | [true|false]
+nil                        | [true|false]
+0                          | [true|false]
+1                          | [true|false]
+""                         | [true|false]
+[]                         | [true|false]
+#&lt;Object:0x007fb3dc0ea1b8&gt; | [true|false]
+#&lt;Class:0x007fb3dc0e2cd8&gt;  | [true|false]
+#&lt;Module:0x007fb3dc0d9ea8&gt; | [true|false]
+</code></pre>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>You can use the method <code>inspect</code> in order to, for each of the values, get a
+representation that looks like the code.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>Of course you will get different object ids for the object, class, and module
+instances everytime you run your code.</p>
+
+<p>So let&rsquo;s prettify this table by removing the object ids. You can do this
+calling <code>sub(/:.*&gt;/, &quot;&gt;&quot;)</code> on whatever <code>inspect</code> returns.</p>
+
+<p>Your table should now look like this:</p>
+<pre class="highlight plaintext"><code>object    | !!object
+true      | true
+false     | false
+nil       | false
+0         | true
+1         | true
+""        | true
+[]        | true
+#&lt;Object&gt; | true
+#&lt;Class&gt;  | true
+#&lt;Module&gt; | true
+</code></pre>
+
+<p><a href="/solutions/truthiness-1.html" class="solution">Show solution</a></p>
+
+<h2>Bonus: Exercise 9.2</h2>
+
+<p>Copy your file to a new file <code>truthiness-2.rb</code>, and change your code so that
+it outputs the following table. Fill each cell with the result that <code>==</code>
+returns for each combination.</p>
+<pre class="highlight plaintext"><code>          | true      | false      | 0          | 1          | ""         | []         | #&lt;Object&gt; | #&lt;Class&gt;  | #&lt;Module&gt;
+true      |           |            |            |            |            |            |           |           |
+false     |           |            |            |            |            |            |           |           |
+0         |           |            |            |            |            |            |           |           |
+1         |           |            |            |            |            |            |           |           |
+""        |           |            |            |            |            |            |           |           |
+[]        |           |            |            |            |            |            |           |           |
+#&lt;Object&gt; |           |            |            |            |            |            |           |           |
+#&lt;Class&gt;  |           |            |            |            |            |            |           |           |
+#&lt;Module&gt; |           |            |            |            |            |            |           |           |
+</code></pre>
+
+<p>Tip: Break this up in sub-tasks:</p>
+
+<ol>
+<li>Write some code that collects an array of arrays containing all rows: An
+array <code>rows</code> that has many arrays, each of which holds 9 results (cells).</li>
+<li>Add the value&rsquo;s representation to the beginning to the row. If you don&rsquo;t
+know how, google for &ldquo;ruby array add to beginning&rdquo;</li>
+<li>Make sure each of the cells is 9 characters wide.</li>
+<li>Join each of the row with the string <code>&quot; | &quot;</code>.</li>
+<li>Add the table headers row.</li>
+<li>Join all rows with the string <code>&quot;\n&quot;</code> (newline), and output the result.</li>
+</ol>
+
+<p><a href="/solutions/truthiness-2.html" class="solution">Show solution</a></p>
+
+        <nav class="page-nav"><a class="prev" href="/exercises/hashes_2.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/exercises/email.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +694,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

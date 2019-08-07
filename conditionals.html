@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Conditionals | Ruby for Beginners</title>
 
     <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/blocks/iterators.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/conditionals/nothing_and_truth.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -342,7 +344,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="active directory expanded">
     <a href="/conditionals.html">
       Conditionals
     </a>
@@ -583,32 +585,70 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Conditionals</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p><em>If this is true, then do that. Otherwise do something else.</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Often we want to check for a certain condition, and then based on it, do
+either one thing or another. Or we want to do something only if a condition is
+true.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>All practical programming languages have some way of expressing this, and in
+Ruby it looks like so:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<span class="k">if</span> <span class="n">number</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"The number is between 1 and 10"</span>
+<span class="k">elsif</span> <span class="n">number</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"The number is between 11 and 20"</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"The number is bigger than 20"</span>
+<span class="k">end</span>
+</code></pre>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>You can probably guess what it does, and how it works, can&rsquo;t you?</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>Let&rsquo;s walk through it one by one:</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<ul>
+<li><p>If you run this code it will print out <code>The number is between 1 and 10</code>,
+because the number assigned to the variable <code>number</code> on the first line is
+<code>5</code>, and for this number the method call <code>number.between?(1, 10)</code> returns
+<code>true</code>. Ruby will therefore execute the code in the <code>if</code> branch: The <code>if</code>
+branch is the block of code that comes after the line with the <code>if</code>
+statement, and that is indented by two spaces. Once it is done executing
+the <code>if</code> branch Ruby will simply ignore the rest of the statement.</p></li>
+<li><p>If you change the number <code>5</code> on the first line to <code>15</code>, and run the code
+again, then it will print out <code>The number is between 11 and 20</code>. In this
+case Ruby will, again, first check the first condition <code>number.between?(1,
+10)</code>, but this time this method call returns <code>false</code>. Therefore, Ruby will
+ignore the <code>if</code> branch, and check the next condition on the <code>elsif</code> line:
+<code>number.between?(11, 20)</code>. Now, this method call returns true, because <code>5</code> is
+between <code>11</code> and <code>20</code>. Ruby will therefore execute the <code>elsif</code> branch, and
+print out this message. Again, once it is done executing the <code>elsif</code> branch
+Ruby will ignore the rest of the statement.</p></li>
+<li><p>If you now change the number <code>15</code> to <code>25</code>, and run the code again, then it
+will print out <code>The number is bigger than 20</code>. Again, Ruby will first check
+the first condition, and find it returns <code>false</code>. It will check the second
+condition, which now also returns <code>false</code>. Therefore Ruby will then execute
+the <code>else</code> branch, and print out that message.</p></li>
+</ul>
+
+<p>The <code>elsif</code> and <code>else</code> statements and branches are optional: you don&rsquo;t need to
+have them. You can have an <code>if</code> statement without <code>elsif</code> or <code>else</code> branches,
+an <code>if</code> statement only with an <code>else</code>, or you could have an <code>if</code> statement with
+one or more <code>elsif</code> statements. Or combine all of them together:</p>
+
+<ul>
+<li>There <em>must</em> be an <code>if</code> statement and branch.</li>
+<li>There <em>can</em> be many <code>elsif</code> statements and branches.</li>
+<li>There <em>can</em> be one <code>else</code> statement and branch.</li>
+</ul>
+
+        <nav class="page-nav"><a class="prev" href="/blocks/iterators.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/conditionals/nothing_and_truth.html">
   Next
 </a></nav>
       </article>

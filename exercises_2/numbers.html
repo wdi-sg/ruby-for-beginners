@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Working with Numbers | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/exercises_2.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/exercises_2/strings.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -552,12 +554,12 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/exercises_2.html">
       Exercises
     </a>
     <ul>
-      <li>
+      <li class="active">
         <a href="/exercises_2/numbers.html">
           Working with Numbers
         </a>
@@ -583,32 +585,102 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Working with Numbers</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>In order to do these exercises you should have read at least the chapter about
+[built_in_classes/numbers.html].</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<h2>Exercise 1.1</h2>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>In <code>irb</code>, calcluate:</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<ul>
+<li>How many hours are in a year.</li>
+<li>How many minutes are in a decade?</li>
+<li>How many seconds old are you?</li>
+</ul>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p class="hint">
+To start <code>irb</code> open your terminal and type <code>irb</code>, then
+hit the <code>return</code> key (<code>enter</code>). To quit it (and get back
+to your system shell prompt) type <code>exit</code> or press <code>ctrl-d</code>.
+</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<h2>Exercise 1.2</h2>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>What do you think happens when you combine floats and integers the following
+in the following calculations?</p>
+
+<p>Try computing these in <code>irb</code>:</p>
+
+<ul>
+<li><code>3 / 2</code></li>
+<li><code>3.0 / 2</code></li>
+<li><code>3 / 2.0</code></li>
+<li><code>4 * 2.0</code></li>
+<li><code>0 + 1</code></li>
+</ul>
+
+<p>Is the result a float or an integer?</p>
+
+<h2>Exercise 1.3</h2>
+
+<p>Try finding out what &ldquo;modulo&rdquo; means by asking Google.</p>
+
+<p>In Ruby (and many other languages) the operator for modulo is <code>%</code>.</p>
+
+<p>Try the following in <code>irb</code>:</p>
+
+<ul>
+<li><code>5 % 2</code></li>
+<li><code>15 % 2</code></li>
+<li><code>505 % 2</code></li>
+</ul>
+
+<p>And:</p>
+
+<ul>
+<li><code>8 % 5</code></li>
+<li><code>9 % 5</code></li>
+<li><code>10 % 5</code></li>
+<li><code>11 % 5</code></li>
+</ul>
+
+<h2>Exercise 1.4</h2>
+
+<p>Methods are a way of &ldquo;doing something with an object&rdquo;, and you&rsquo;ll learn a lot
+more about them in a few chapters.</p>
+
+<p>In Ruby, numbers have methods that allow you to check whether the number is odd
+or even.</p>
+
+<p>Look through the <a href="http://ruby-doc.org/core-2.2.2/Integer.html">documentation for integer</a>
+numbers and find the methods that tell if a number is odd or even.</p>
+
+<p>Look at the examples for some of the other methods on that page.</p>
+
+<p class="hint">
+You can use a method by appending a dot <code>.</code> and then the method name
+to the object. E.g. <code>-99.abs</code> uses (we also say: &ldquo;calls&rdquo;) the method
+<code>abs</code> on the number <code>-99</code>.
+</p>
+
+<h2>Exercise 1.5</h2>
+
+<p>In <code>irb</code>, use these methods to find out if certain numbers are odd or even.</p>
+
+<p>Try a bunch of numbers like <code>0, 1, 2, 99, -502</code> etc.</p>
+
+<p>Try for yourself what it does, and google for &ldquo;ruby number odd even&rdquo; to find
+<a href="http://ruby-doc.org/core-2.2.2/Integer.html#method-i-odd-3F">the documentation</a>
+for these methods.</p>
+
+<p><a href="/solutions_2/numbers-5.html" class="solution">Show solution</a></p>
+
+        <nav class="page-nav"><a class="prev" href="/exercises_2.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/exercises_2/strings.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +700,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

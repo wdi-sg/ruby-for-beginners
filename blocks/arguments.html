@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Block arguments | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/blocks/syntax.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/blocks/return_values.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -310,7 +312,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/blocks.html">
       Blocks
     </a>
@@ -320,7 +322,7 @@
           Alternative block syntaxes
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/blocks/arguments.html">
           Block arguments
         </a>
@@ -583,32 +585,56 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Block arguments</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>Blocks make a lot of sense on methods that are defined on collections like
+arrays and hashes.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Let&rsquo;s have a look at some examples with arrays.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>In our previous example that used the method <code>times</code> our block did not accept
+an argument. A block that accepts an argument looks like this:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> was passed to the block"</span>
+<span class="k">end</span>
+</code></pre>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>And, again, this is the same as:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> was passed to the block"</span> <span class="p">}</span>
+</code></pre>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>It is unknown to us why Matz has chosen to not enclose the argument list of
+a block with round parentheses just like method argument lists. Instead, Ruby
+wants us to use vertical bars (we call them &ldquo;pipes&rdquo;).</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>So, for blocks, <code>do |number|</code> is the same that is <code>def add_two (number)</code> for a
+method definition, except that the method wants a name while a block is
+anonymous: <code>|number|</code> and <code>(number)</code> both are argument lists. The first one
+is used for blocks, the second one for methods.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p class="hint">
+Block arguments are listed between pipes <code>|</code>, instead of parentheses.
+</p>
+
+<p>Now, when you run the code example above, you&rsquo;ll see the message printed out
+for each of the numbers contained in the array.</p>
+
+<p>Does that make sense? Again, our code almost reads like an English sentence:</p>
+
+<p><em>With this array for each of its elements, naming it <code>number</code>, output the
+following message.</em></p>
+
+<p>The method <code>each</code> is defined on arrays, and it does just this:</p>
+
+<p>It takes each of the elements in the array and calls the block, passing the
+element as an argument. The block can then do whatever you want it to do with
+the element. In our case we interpolate it into a string and print it out to
+the screen.</p>
+
+        <nav class="page-nav"><a class="prev" href="/blocks/syntax.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/blocks/return_values.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +654,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

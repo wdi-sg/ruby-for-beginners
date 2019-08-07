@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Object-oriented programming | Ruby for Beginners</title>
 
     <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/roadmap.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/variables.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -110,7 +112,7 @@
       Our Roadmap
     </a>
   </li>
-  <li>
+  <li class="active">
     <a href="/object_oriented_programming.html">
       Object-oriented programming
     </a>
@@ -583,32 +585,88 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Object-oriented programming</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p><em>Classes and objects</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Ruby is, like many other popular languages, an object-oriented programming
+language. Other object-oriented languages that you might have heard of are
+C++, Java, Python, PHP, and Javascript. At some point in the 1990s this
+paradigm started to become more and more popular and nowadays it is the
+most prevalent one.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>One reason for this is that object-oriented programming very much fits the way
+we perceive and think about the world, at least in the occidental culture.
+Our way of thinking was, historically, very much influenced by Plato,
+and philosophers who followed him:</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>We somehow tend to think about the world as if there are abstract &ldquo;ideas&rdquo; (or
+concepts) and concrete &ldquo;things&rdquo;, which are entities of the ideas, or
+implementations of the concepts. So, &ldquo;ideas&rdquo; are like blueprints for &ldquo;things&rdquo;.</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>For example there&rsquo;s the idea of a human being, and then there are actual human
+beings: you, and me. Our idea of a human being includes the ability to, for
+example, remember our own name, and tell it to others when asked. We know
+that we can ask people for their name, and they&rsquo;ll know it.</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>Now, object-oriented programming languages allow you to describe things exactly
+this way: In object-oriented programming languages &ldquo;ideas&rdquo; are called classes.
+And actual &ldquo;things&rdquo; are called objects.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>As a programmer you would define classes, like a class &ldquo;User&rdquo; and a class
+&ldquo;Tweet&rdquo;, and then create actual instances of these classes: an actual concrete
+user with a name, email address, a password and actual tweets. You would also
+define that users have the ability to remember their own name, and the ability
+to tell it to others when asked.</p>
+
+<p class="hint">
+Classes are like ideas, objects are concrete things, manifestations of their ideas.
+</p>
+
+<p>Every object-oriented programming language comes with some &ldquo;ideas&rdquo;, that is,
+classes, already baked in, and so does Ruby. For example Ruby has classes for
+numbers, strings (text), and other useful things. You therefore can, without any
+further effort, do number calculations, or text transformations.</p>
+
+<p>In your first excercises you will do just that. Later on you will learn to
+define your own &ldquo;ideas&rdquo; as classes, and then use them by the way of creating
+actual instances or objects, from these classes, and then make them interact with
+each other and do interesting stuff.</p>
+
+<p>By the way, here is a quote from a book titled
+<a href="http://worrydream.com/EarlyHistoryOfSmalltalk/">The Early History Of Smalltalk</a>
+from 1993. It has been written by Alan C. Kay, one of the designers of
+<a href="https://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a>, which was created in the
+1970s, and can be considered the first fully object oriented programming
+language. We think it&rsquo;s pretty interesting to read.</p>
+
+<p><em>&ldquo;[Smalltalk&rsquo;s] way of <strong>making objects</strong> is quite Platonic in that some of them act
+as [&hellip;] <strong>Ideas from which manifestations can be created</strong>.
+That the Ideas are themselves manifestations (of the Idea-Idea) and that the
+Idea-Idea is a-kind-of Manifestation-Idea — which is a-kind-of itself, so that
+the system is completely self-describing — would have been appreciated by Plato
+as an extremely practical joke.&rdquo; &mdash; Alan C. Kay</em></p>
+
+<p>Anyhow, you can take away from all of this that those universes that we create
+when we write programs will be populated by objects (&ldquo;things&rdquo;), and their
+characteristics are defined by classes (&ldquo;types of things&rdquo;, or &ldquo;ideas&rdquo;).</p>
+
+<p>This will start to make a lot more sense to you once you write your own classes.</p>
+
+<p class="hint sidenote">
+There is, today, some debate about the paradigm of object-oriented
+programming, and whether we should move on to another one, called &ldquo;functional
+programming&rdquo;. You might hear about this if you talk to developers. Some
+functional languages are Haskell, Go, and Clojure, and they have recently
+started gaining some traction. Don&rsquo;t let yourself be distracted by this too
+much, unless you really want to. Ruby is a very good language to start learning
+programming for lots of reasons.
+</p>
+
+        <nav class="page-nav"><a class="prev" href="/roadmap.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/variables.html">
   Next
 </a></nav>
       </article>

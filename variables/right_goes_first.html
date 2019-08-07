@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Things on the right go first | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/variables/reusing_names.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/built_in_classes.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -115,7 +117,7 @@
       Object-oriented programming
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/variables.html">
       Variables
     </a>
@@ -125,7 +127,7 @@
           Reusing variable names
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/variables/right_goes_first.html">
           Things on the right go first
         </a>
@@ -583,32 +585,52 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Things on the right go first</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>One last thing that is worth mentioning about variables:</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Just as in traffic (well, at least in
+<a href="https://en.wikipedia.org/wiki/Right-_and_left-hand_traffic">most parts of the world</a>),
+things on the right side go first :)</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>For a variable assignment, in order to assign the thing on the right side to
+the name on the left side, Ruby first needs to figure out the thing on the
+right. As you will see later the same is true for many other expressions in
+Ruby.</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>In our example above it will first create the object that is the number <code>1</code>,
+and then assign it to the name <code>number</code>. The following example makes that more
+clear:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="nb">puts</span> <span class="n">number</span>
+</code></pre>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>When Ruby looks at the first line <code>number = 2 + 3 * 4</code> it notices that this is
+using the assignment operator <code>=</code>. Therefor, before it can assign the name
+<code>number</code> to the &ldquo;thing&rdquo; (object) on the right &hellip; it first needs to know what
+that thing is.</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>So, before she does anything else, Ruby will first look at the expression <code>2 +
+3 * 4</code>, which will result in the number (object) <code>14</code>. She will <em>then</em> assign
+the name <code>number</code> to this object (i.e. evaluate the assignment operator <code>=</code>).</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>You can imagine that in this moment, when Ruby starts evaluating the assignment
+<code>=</code> the code temporarily looks like this: <code>number = 14</code> (because the
+calculation has returned the number <code>14</code>).</p>
+
+<p>Does this make sense?</p>
+
+<p>Again, on the second line Ruby will then pass the thing with the name <code>number</code>
+(which is <code>14</code>) to <code>puts</code>, which will output it to the screen.</p>
+
+<p class="hint">
+Ruby evaluates the expression on the right first.
+</p>
+
+        <nav class="page-nav"><a class="prev" href="/variables/reusing_names.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/built_in_classes.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +650,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

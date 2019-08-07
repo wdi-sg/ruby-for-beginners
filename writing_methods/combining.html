@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Combining Methods | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/writing_methods/scopes.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/writing_methods/printing.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -216,7 +218,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/writing_methods.html">
       Writing Methods
     </a>
@@ -246,7 +248,7 @@
           Scopes
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/writing_methods/combining.html">
           Combining Methods
         </a>
@@ -583,32 +585,82 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Combining Methods</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>We&rsquo;ve discussed how to define a method, and how to call (use) it.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>What if one method is not enough? What if methods need to do more complicated
+things?</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>Easy. We can call methods from other methods.</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>For example, we could re-write (&ldquo;re-implement&rdquo;) our method <code>add_two</code> using
+another method <code>add_one</code>, and simply call it twice:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">end</span>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">=</span> <span class="n">add_one</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">add_one</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="k">end</span>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>This would output <code>5</code> just like our previous examples. Do you understand how it
+works?</p>
+
+<p>Of course, in Ruby we could also just solve this whole thing with simply using
+the <code>+</code> operator.</p>
+
+<p>However, for the sake of the example, let&rsquo;s have a look how we could add a method
+that does the exact same thing as the <code>+</code> operator, too:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="n">other</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>We can now use that method like so:</p>
+<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="n">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre>
+
+<p>Which, again, would output <code>5</code>.</p>
+
+<p>Note that in this example our method <code>sum</code> now takes two arguments, and so,
+when we call (use) it, we also need to pass two numbers (i.e. add them inside
+the parentheses on the last line).</p>
+
+<p>Now, with this method in place we could change (&ldquo;refactor&rdquo;) our previous methods
+to use it:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="n">other</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">sum</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">sum</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">add_one</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>Again, these examples are not super realistic, as we&rsquo;d probably just use the
+<code>+</code> operator in the first place, in practice.</p>
+
+<p>However, we think this nicely demostrates how you can use one method from
+another &hellip; and how different methods require different numbers of arguments.</p>
+
+<p>We&rsquo;ll look at a more realistic example in the next chapter.</p>
+
+        <nav class="page-nav"><a class="prev" href="/writing_methods/scopes.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/writing_methods/printing.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +680,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

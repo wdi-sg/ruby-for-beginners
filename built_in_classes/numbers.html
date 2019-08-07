@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Numbers | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/built_in_classes.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/built_in_classes/strings.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -132,12 +134,12 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/built_in_classes.html">
       Built-In Data Types
     </a>
     <ul>
-      <li>
+      <li class="active">
         <a href="/built_in_classes/numbers.html">
           Numbers
         </a>
@@ -583,32 +585,93 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Numbers</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>Numbers are simply numbers.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>You can create one by writing it: <code>123</code> is Ruby code and it represents the
+number one-hundred-twenty-three.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>Negative numbers are created by prepending a minus <code>-</code>: This is the number
+minus-ninety-nine: <code>-99</code>.</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>And of course there are decimal numbers, too. Again, you create one by writing
+it: <code>12.34</code>.</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>You can also use an underscore to separate thousands places: E.g. <code>1_234.56</code> is the
+number one-thousand-two-hundred-thirty-four-point-five-six.  However, this is
+optional. This is the exact same number in Ruby: <code>1234.56</code>.</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p class="hint">
+A number is defined by a series of digits, using a dot as a decimal mark, and
+optinally an underscore as a thousands separator.
+</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>Note that different countries use different punctuation for decimal and
+thousands separators. Ruby is using the same notation used in the USA, which
+happens to be the exact opposite of what&rsquo;s used in Germany.</p>
+
+<h2>Kinds of numbers</h2>
+
+<p>Under the hood, for reasons that are mostly technical, there are actually
+different kinds of numbers:</p>
+
+<p>For example there are integer numbers (those without a fraction, i.e. a dot and
+decimal places), and depending on their size there are two kinds of them. For
+floating point numbers there are even more. Unless you are super curious, you
+can perfectly ignore all of that for now, and just think of numbers as numbers.</p>
+
+<p>However, when you do calculations with numbers, keep in mind that integer
+numbers (&ldquo;integers&rdquo;) and decimal point numbers (floating point numbers, aka
+&ldquo;floats&rdquo;) are different.</p>
+
+<p>If you do a calculation that uses integer number you&rsquo;ll always
+get an integer back:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+</code></pre>
+
+<p>However, if any of the numbers involved is a float, then you&rsquo;ll get a float back:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
+</code></pre>
+
+<p class="hint">
+Mathematical operations result in a floating point number except if all numbers used are integer numbers.
+</p>
+
+<p>This is, for example, important when you do a division (<code>/</code> means &ldquo;divide by&rdquo;):</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">1</span>
+</code></pre>
+
+<p>As you can see any decimal places will be just cut off, since the result needs
+to be an integer number.</p>
+
+<p>However, if you use floats:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
+<span class="o">&gt;</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
+</code></pre>
+
+<p class="hint">
+Use floating point (decimal) numbers when doing devisions.
+</p>
+
+<p>Exercises: How about doing some of the <a href="/exercises/numbers.html">exercises on numbers</a>
+next?</p>
+
+        <nav class="page-nav"><a class="prev" href="/built_in_classes.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/built_in_classes/strings.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +691,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Instance variables | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/writing_classes/initializers.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/writing_classes/attribute_readers.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -258,7 +260,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/writing_classes.html">
       Writing classes
     </a>
@@ -278,7 +280,7 @@
           Initializing objects
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/writing_classes/instance_variables.html">
           Instance variables
         </a>
@@ -583,32 +585,79 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Instance variables</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p><em>An object&rsquo;s own knowledge</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Now that you understand how the string that we pass to the method <code>new</code>
+ends up being passed to the new object&rsquo;s <code>initialize</code> method, we can start
+improving <code>initialize</code>, so it does something with the string, and actually
+<em>initializes</em> our new object:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>This introduces another new concept: <code>@name</code> is a new type of variable, called
+an &ldquo;instance variable&rdquo;.</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>The body of the <code>initialize</code> method now does nothing else but assign the value
+of the local variable <code>name</code> to an instance variable <code>@name</code>.</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>You remember how we said that each method has its own local scope, which is
+created when the method is called, and populated with local variables from the
+arguments list. You have also learned that this scope is erased, and thrown
+away when Ruby exits the method body and returns from the method. And that
+local variables that are visible in one method are not visible in other
+methods: that&rsquo;s why they are called local.</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>Now, the thing is: Every <em>object</em> also has its own scope.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>An object&rsquo;s scope is populated with instance variables, in the moment we assign
+something to them. And they are visible <em>everywhere</em> in the object, that is, in
+every method that the object has.</p>
+
+<p class="hint">
+Instance variables live in, and are visible everywhere in the object&rsquo;s scope.
+</p>
+
+<p>You can think of the object&rsquo;s scope as your own knowledge, or memories.</p>
+
+<p>For example, you know your name, your email address, and your email password.
+You keep this knowledge around, and you can use it when you do things (such as
+responding to another person). Likewise, an object keeps its instance variables
+around, as long as the object exists.</p>
+
+<p>Ok, let&rsquo;s see how that works in practise.</p>
+
+<p>If you create, and output an instance of our class <code>Person</code>, you&rsquo;ll see that
+Ruby now prints out the instance variable, too:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span>
+</code></pre>
+
+<p>The first line creates a new instance of the class <code>Person</code>, passing the string
+<code>&quot;Ada&quot;</code>, and assign this new object to the variable <code>person</code>. The second line
+will then print it out:</p>
+<pre class="highlight plaintext"><code>#&lt;Person:0x007fd8947aa868 @name="Ada"&gt;
+</code></pre>
+
+<p>As you can see this includes the instance variable <code>@name</code> with the value
+<code>&quot;Ada&quot;</code>: This specific, concrete instance of the class <code>Person</code> knows their
+name.</p>
+
+<p>You can think of this as you, as a programmer, creating this new person, and
+in the moment of its creation, its birth, you also give it a name. Which kind
+of how it works with real people, too, isn&rsquo;t it?</p>
+
+<p>Hmm, well &hellip; Yeah, sort of. Anyhow, let&rsquo;s move on.</p>
+
+        <nav class="page-nav"><a class="prev" href="/writing_classes/initializers.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/writing_classes/attribute_readers.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +677,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

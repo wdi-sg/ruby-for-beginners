@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Operators are methods | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/operators/comparison.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/bonus.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -354,7 +356,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/operators.html">
       Operators
     </a>
@@ -374,7 +376,7 @@
           Comparison operators
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/operators/methods.html">
           Operators are methods
         </a>
@@ -583,32 +585,70 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Operators are methods</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>As you have seen a number has methods named like the arithmetic operators <code>+</code>,
+<code>-</code>, <code>*</code>, and <code>/</code>. That&rsquo;s right! Interesting.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>If you think about this, it makes sense: If everything is an object then
+numbers are objects. If &ldquo;doing things&rdquo; means operating with methods by the way
+of calling them, then what would <code>+</code> be? A method of course.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>But if we call methods on objects using that dot <code>.</code> notation, then where are
+the dots in <code>2 + 3 * 4</code>?</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>The trick is: Ruby adds them for you, silently. If you write the following code:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+</code></pre>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>Then Ruby will translate this to the following:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">.</span><span class="nf">+</span><span class="p">(</span><span class="mi">3</span><span class="p">.</span><span class="nf">*</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</code></pre>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>Fun, isn&rsquo;t it? These operators are all methods on numbers, and they can be
+called just like any other method. (The same is true for lots of other
+operators, as you can see in IRB, when you run <code>1.methods.sort</code>.) The code
+above is valid Ruby code, and both lines do exactly the same.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>Ruby just adds a little bit of syntax in order to make it easier to read and
+write for us: It allows us to write <code>number = 2 + 3 * 4</code> instead of <code>number =
+2.+(3.*(4))</code>, which is a pretty nasty thing to type.</p>
+
+<p>This is something called &ldquo;syntax sugar&rdquo;, because it makes the language more
+sweet (no kidding).</p>
+
+<p>By the way, this works the same way for other things too.</p>
+
+<p>For example, you have learned about the array and hash syntax that uses square
+brackets <code>[]</code> for reading and writing.</p>
+
+<p>Ruby translates this code:</p>
+<pre class="highlight ruby"><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">puts</span> <span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">hash</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'eins'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'zwei'</span> <span class="p">}</span>
+<span class="nb">hash</span><span class="p">[</span><span class="ss">:three</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'drei'</span>
+<span class="nb">puts</span> <span class="nb">hash</span><span class="p">[</span><span class="ss">:three</span><span class="p">]</span>
+</code></pre>
+
+<p>to these method calls:</p>
+<pre class="highlight ruby"><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">array</span><span class="p">.</span><span class="nf">[</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">puts</span><span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="nf">[</span><span class="p">](</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">hash</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'eins'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'zwei'</span> <span class="p">}</span>
+<span class="nb">hash</span><span class="p">.</span><span class="nf">[</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="ss">:three</span><span class="p">,</span> <span class="s1">'drei'</span><span class="p">)</span>
+<span class="nb">puts</span><span class="p">(</span><span class="nb">hash</span><span class="p">.</span><span class="nf">[</span><span class="p">](</span><span class="ss">:three</span><span class="p">))</span>
+</code></pre>
+
+<p>Knowing this can be useful when you want to write classes that look and feel
+similar to arrays or hashes, but behave differently.</p>
+
+        <nav class="page-nav"><a class="prev" href="/operators/comparison.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/bonus.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +668,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Strings | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/built_in_classes/numbers.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/built_in_classes/true_false_nil.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -132,7 +134,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/built_in_classes.html">
       Built-In Data Types
     </a>
@@ -142,7 +144,7 @@
           Numbers
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/built_in_classes/strings.html">
           Strings
         </a>
@@ -583,32 +585,121 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Strings</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>A String, in programming languages, is text.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>More precisely a String is an object that represents a specific text. E.g. your
+name, represented in Ruby, is one String. The title of this text is another
+String, and so is this paragraph, and this full text in its entirety.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>In web applications Strings are everywhere. In fact they&rsquo;re used by far more
+often than numbers. That probably is because most applications that we deal
+with on a daily basis are dealing with text messages (Email, Facebook, Twitter,
+&hellip;) or descriptions of things (Amazon, Ebay, &hellip;).</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>Did you ever use a web application that is a complicated calculator app, and
+mostly deals with numbers? There you go :)</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>In Ruby there are a couple of flexible ways to create Strings, but the most simple
+and by far most common way is to simply enclose some characters in quotes:</p>
+<pre class="highlight ruby"><code><span class="s2">"This is one String!"</span>
+<span class="s1">'And this is another one.'</span>
+</code></pre>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p class="hint">
+Strings can be defined by enclosing any text with single or double quotes.
+</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>Both of these are good to use. Technically they are <em>almost</em> the same, except
+for one important feature called &ldquo;String interpolation&rdquo;, which we&rsquo;ll <a href="/bonus/string_interpolation.html">explain
+later</a>.</p>
+
+<h3>Things you can do with Strings</h3>
+
+<p>Here are a few things you can do with Strings.</p>
+
+<p>You can glue them together by using <code>+</code>. We also call this
+<a href="http://www.wikiwand.com/en/Concatenation">concatenation</a>.</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"snow"</span> <span class="o">+</span> <span class="s2">"ball"</span>
+<span class="o">=&gt;</span> <span class="s2">"snowball"</span>
+
+<span class="o">&gt;</span> <span class="s2">"hi"</span> <span class="o">+</span> <span class="s2">"hi"</span> <span class="o">+</span> <span class="s2">"hi"</span>
+<span class="o">=&gt;</span> <span class="s2">"hihihi"</span>
+</code></pre>
+
+<p>The last operation can also be done by using <code>*</code>, like so:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"hi"</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="s2">"hihihi"</span>
+</code></pre>
+
+<p>I.e. multiplying a String by a number in Ruby means repeating the String as
+many times.</p>
+
+<p>The following examples are worth noting, too:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"1"</span> <span class="o">+</span> <span class="s2">"1"</span> <span class="o">+</span> <span class="s2">"1"</span>
+<span class="o">=&gt;</span> <span class="s2">"111"</span>
+
+<span class="o">&gt;</span> <span class="s2">"1"</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="s2">"111"</span>
+</code></pre>
+
+<p>This demonstrates that Ruby behaves the same for Strings that contain nothing
+but numbers.</p>
+
+<p>Some other things that you can do with Strings that you can try yourself in
+<code>irb</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">upcase</span>
+<span class="o">=&gt;</span> <span class="s2">"HELLO"</span>
+
+<span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">capitalize</span>
+<span class="o">=&gt;</span> <span class="s2">"Hello"</span>
+
+<span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">5</span>
+
+<span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">reverse</span>
+<span class="o">=&gt;</span> <span class="s2">"olleh"</span>
+</code></pre>
+
+<p class="hint">
+These last few examples are examples of &ldquo;calling methods on objects that are Strings&rdquo;.
+Methods are &ldquo;behaviour&rdquo; that objects are capable of. We&rsquo;ll explain methods, and how
+they relate to objects more in just a few chapters.
+</p>
+
+<p>Exercises: How about doing some of the <a href="/exercises/strings.html">exercises on Strings</a>
+next?</p>
+
+<h2>History</h2>
+
+<p>The reason why pieces of text, in the context of programming languages, usually
+are not referred to as &ldquo;text&rdquo;, but instead with the slightly odd term &ldquo;String&rdquo;
+is a historical, and technical one:</p>
+
+<p>In early programming languages Strings were implemented as lists of characters,
+and programmers had to deal with them as such: imagine pellets lined up on a
+String. One had to take care of nasty things like manually managing the length
+of the character list, and inserting a couple characters in the middle of such
+a list was quite a complicated operation.</p>
+
+<p>When languages evolved over time they made things like this easier for
+developers, and added built-in abstractions for the concept of &ldquo;Strings&rdquo;.
+So the name sticked, and resembles the way programmers had thought about text
+before: as characters lined up on Strings.</p>
+
+<p class="hint">
+Luckily, nowadays, in Ruby and any other modern language, you can just think
+about Strings as text.
+</p>
+
+        <nav class="page-nav"><a class="prev" href="/built_in_classes/numbers.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/built_in_classes/true_false_nil.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +719,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

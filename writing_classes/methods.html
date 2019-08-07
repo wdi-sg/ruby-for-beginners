@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Defining instance methods | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/writing_classes/definition.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/writing_classes/initializers.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -258,7 +260,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/writing_classes.html">
       Writing classes
     </a>
@@ -268,7 +270,7 @@
           Defining classes
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/writing_classes/methods.html">
           Defining instance methods
         </a>
@@ -583,32 +585,168 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Defining instance methods</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p>If you have read closely methods can be defined and called on objects (i.e.
+instances), e.g. <code>1.odd?</code>. And you have just seen that they can also be
+defined on classes, e.g. <code>Calculator.new</code>.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Fairly straightforward, methods that are available on classes are called
+<em>class methods</em>, and methods that are available on instances are called
+<em>instance methods</em>.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>In this chapter we want to add the &ldquo;stand alone&rdquo; methods that we&rsquo;ve learned to
+port (move) in the previous chapters <a href="/writing_methods.html">Writing Methods</a>
+to our class <code>Calculator</code> so that they&rsquo;ll end up as instance methods.</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>Here&rsquo;s how we can do that.</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
+  <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">+</span> <span class="n">other</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>That&rsquo;s right. You simply move the method into the class body, so that it&rsquo;s
+enclosed by it.</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p class="hint">
+Instance methods are defined inside the class body.
+</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p>Also note that the method definition is indented by one level, that is, 2
+spaces. This signals that the method <code>sum</code> belongs to the class <code>Calculator</code>.
+Everything between the line <code>class Calculator</code> and the final line <code>end</code> is
+called the &ldquo;class body&rdquo;, and just like method bodies we indent them by one more
+level.</p>
+
+<p class="hint formatting">
+On formatting: the keywords <code>class</code> and <code>end</code> sit on
+the same level. The class body is indented by one level.
+</p>
+
+<p>Cool.</p>
+
+<p>So, how can we use the new method? That is, how can we <em>call</em> the method <code>sum</code>
+on a calculator?</p>
+
+<p>Before you read more, think about this a little. In theory you have all the bits
+and pieces to answer this question:</p>
+
+<ul>
+<li>You know how to create a new calculator instance (object).</li>
+<li>You know how to call a method on an object.</li>
+<li>You know how to pass arguments (extra bits of information) to the method call.</li>
+</ul>
+
+<p>We can instantiate (&ldquo;order&rdquo;) a new instance from our <code>Calculator</code> class, and
+call the method <code>sum</code> on it like so:</p>
+<pre class="highlight ruby"><code><span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>This will output <code>5</code>. Success :)</p>
+
+<p>A calculator that cannot do anything but additions is pretty useless. Let&rsquo;s
+spice our class up by adding more operations, i.e. methods. Also, let&rsquo;s rename
+<code>sum</code> to <code>plus</code> so it matches the operator:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
+  <span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">+</span> <span class="n">other</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">-</span> <span class="n">other</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">*</span> <span class="n">other</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">/</span> <span class="n">other</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Now our calculator already is slightly more useful: We can do the most basic
+math operations with it.</p>
+<pre class="highlight ruby"><code><span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">minus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>This will output:</p>
+<pre class="highlight plaintext"><code>5
+-1
+6
+0
+</code></pre>
+
+<p>Whoops!</p>
+
+<p>This looks all good except for the last line, right. Remember why that is?
+Right, dividing one integer number by another returns, again, an integer
+number. And these aren&rsquo;t quite great for calculating divisions.</p>
+
+<p>One thing we could do about this is require the users of our calculator to pass
+(provide) the appropriate types of numbers themselves. So it would be their own
+responsibility if something goes wrong with the division.</p>
+
+<p>However, we could also think that a calculator should be smart enough to notice
+this.  So we could improve our calculator to always change the type of the
+numbers passed to floating point numbers as part of the method <code>divide</code>. In
+other words, the method <code>divide</code> would take the numbers, makes sure at least
+one of them is a <code>Float</code> (floating point number), and only then do the
+calculation.</p>
+
+<p>The method used to convert an integer to a float is <code>to_f</code>. When called on a
+float it will just return the float:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">to_f</span>
+<span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">.</span><span class="nf">to_f</span>
+<span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
+</code></pre>
+
+<p>Alright, lets use that knowledge to improve our <code>divide</code> method. It will be
+sufficient to call the method <code>to_f</code> on one of the numbers, because that will
+make sure we get a <code>Float</code> back:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
+  <span class="c1"># ...</span>
+
+  <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span><span class="p">.</span><span class="nf">to_f</span> <span class="o">/</span> <span class="n">other</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>With that in place our calculator always returns a <code>Float</code> from the method
+<code>divide</code>:</p>
+<pre class="highlight ruby"><code><span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">minus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>This will output:</p>
+<pre class="highlight plaintext"><code>5
+-1
+6
+0.666666666666
+</code></pre>
+
+<p>Perfect.</p>
+
+<p>Let&rsquo;s move on, and define a class <code>Person</code>, which should be even more fun.</p>
+
+        <nav class="page-nav"><a class="prev" href="/writing_classes/definition.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/writing_classes/initializers.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +766,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>

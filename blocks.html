@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Blocks | Ruby for Beginners</title>
 
     <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/writing_classes/self.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/blocks/syntax.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -310,7 +312,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="active directory expanded">
     <a href="/blocks.html">
       Blocks
     </a>
@@ -583,32 +585,88 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Blocks</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p><em>Like methods, but without a name</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>Blocks are one of the things programmers absolutely love about Ruby. They are
+an extremely powerful feature that allows us to write very flexible code. At
+the same time they read very well, and they are used all over the place.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>So, what is a block?</p>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>A block, essentially, is the same thing as a method, except it does not have a
+name, and does not belong to an object.</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>I.e. a block is an anonymous piece of code, it can accept input in form of
+arguments (if it needs any), and it will return a value, but it does not have a
+name.</p>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>Moreover, blocks can only be created by the way of passing them to a method
+when the method is called.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<p class="hint">
+A block is a piece of code that accepts arguments, and returns a value. A block
+is always passed to a method call.
+</p>
+
+<p>Let&rsquo;s jump right in:</p>
+<pre class="highlight ruby"><code><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">"Oh, hello from inside a block!"</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>As you can see <code>times</code> is a method that is defined on numbers: <code>5.times</code> calls
+the method <code>times</code> on the number <code>5</code>.</p>
+
+<p>Now, when this method is called the only thing passed is a block: that is the
+anonymous piece of code between <code>do</code> and <code>end</code>. There are no objects passed as
+arguments to the method <code>times</code>, instead it just passes a block.</p>
+
+<p>The method <code>times</code> is implemented in such a way that it simply calls (executes)
+the block 5 times, and thus, when you run the code, it will print out the
+message <code>&quot;Oh, hello from inside a block!&quot;</code> 5 times.</p>
+
+<p>The code almost reads like an English sentence <em>Five times do output this
+message</em>, right? It does, and that&rsquo;s one of the reasons why Rubyists love
+using blocks.</p>
+
+<p>One of the things that seem rather hard to grasp about blocks is that</p>
+
+<ul>
+<li>First, they are anonymous chunks of code.</li>
+<li>Second, they are passed to methods just like other objects.</li>
+<li>And third, they still can be called (just like methods), from inside the
+method that it was passed to.</li>
+</ul>
+
+<p>Does that make sense?</p>
+
+<p>Imagine you are the object that represents the number <code>5</code>. You are a number and
+you do know your own value.</p>
+
+<p>Now I hand you a piece of paper saying: <code>Please print the following on the
+screen: &quot;Oh, hello!&quot;</code>, and I ask you to execute this instruction as many times
+as the value that you know.</p>
+
+<p>You&rsquo;d go ahead and follow the instructions on the paper, and thus print out the
+message. You repeat this 5 times, because <code>5</code> is the value that you know.</p>
+
+<p>This is pretty much how the method <code>times</code> on numbers works, and how blocks
+work: <code>times</code> takes the block (the instructions), and runs it as many times
+as the value of the number.</p>
+
+<p>To summarize: Methods can not only accept input in the form of objects passed
+as arguments.  They can also accept this one special piece of input, which is
+an anonymous block of code. And they can then call (execute) this block of code
+in order to do useful things with it.</p>
+
+<p>Let&rsquo;s look at some other aspects of how blocks work next.</p>
+
+        <nav class="page-nav"><a class="prev" href="/writing_classes/self.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/blocks/syntax.html">
   Next
 </a></nav>
       </article>

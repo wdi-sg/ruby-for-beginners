@@ -10,15 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Formatting your code | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-870787d6.png" />
   </head>
 
   <body>
-    <nav class="page-nav"></nav>
-    <nav class="page-nav"><a class="next" href="/preface.html">
+    <nav class="page-nav"><a class="prev" href="/learning_to_program/dont_believe.html">
+  Previous
+</a></nav>
+    <nav class="page-nav"><a class="next" href="/learning_to_program/error_messages.html">
   Next
 </a></nav>
 
@@ -26,7 +28,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -41,7 +43,7 @@
       Programming is creation
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/learning_to_program.html">
       Learning to program
     </a>
@@ -56,7 +58,7 @@
           Don&rsquo;t believe everything we say
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/learning_to_program/formatting_code.html">
           Formatting your code
         </a>
@@ -583,32 +585,96 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Formatting your code</h1>
 
-<p><em><a href="http://rubymonstas.org">Ruby Monday Study Group</a> curriculum for beginners</em></p>
+<p><em>Keeping things pretty</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin, and it outlines the current
-state of our beginner groups curriculum.</p>
+<p>By &ldquo;formatting code&rdquo; we refer to the way code is indented, or not, where and
+how whitespace is being used in order to separate things visually, or not, etc.</p>
 
-<p>After completing this curriculum you&rsquo;ll be able to read, understand, and write
-basic Ruby code yourself:</p>
+<p>For example, even though this code won&rsquo;t mean a lot to you at this point (it
+will, in a few chapters), it is formatted well:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">widths</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+  <span class="n">row</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">cell</span><span class="o">|</span>
+    <span class="n">cell</span><span class="p">.</span><span class="nf">width</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
 
-<p>You can use this knowledge to create small tools that might help you in your
-day-to-day work (such as converting numbers, or extracting data from files)
-that normally would cost a lot of manual work. You&rsquo;ll be able to jump into
-other tutorials, and have a much easier time understanding what they&rsquo;re
-talking about. And you can start working on our next curriculum which will
-walk you through the basics of building an actual
-<a href="http://webapps-for-beginners.rubymonstas.org">web application</a>.</p>
+<p>Even without understanding what these few lines of code do at all, from just
+looking at it one can recognize a certain structure: things are somehow
+nested, and stuff that sits on the same horizontal indentation relates to
+each other visually.</p>
 
-<p>If you&rsquo;d like to print this book, or export it as a PDF try using <a href="/print.html">this page</a>,
-which is a single-page version of the entire book.</p>
+<p>On the other hand the following code also is perfectly valid Ruby code, in the
+sense that Ruby will happily run it, and it does exactly the same. However,
+it is not formatted very well at all (in fact it&rsquo;s quite a mess, isn&rsquo;t it?):</p>
+<pre class="highlight ruby"><code>  <span class="k">def</span> <span class="nf">widths</span> <span class="p">(</span>     <span class="n">row</span>
+<span class="p">)</span>
+ <span class="n">row</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span> <span class="n">cell</span><span class="o">|</span> <span class="n">cell</span><span class="p">.</span><span class="nf">width</span>
+<span class="k">end</span>
+     <span class="k">end</span>
+</code></pre>
 
-<p>You can find the <a href="https://github.com/rubymonsters/ruby-for-beginners">source code of this book here</a>.</p>
+<p>This <em>does</em> the same, technically: Ruby will run it. But it does not <em>look</em> and
+<em>read</em> the same, simply because of the way it is formatted.</p>
 
-        <nav class="page-nav"></nav>
-        <nav class="page-nav"><a class="next" href="/preface.html">
+<h2>Pattern recognition</h2>
+
+<p>When you talk to developers about your code you will probably notice very
+quickly that we are all obsessed about how exactly we&rsquo;d like code to be
+formatted.</p>
+
+<p>There&rsquo;s a good reason for that, and you should try hard to learn how to use
+your editor in order to format your code properly, so over time, you can become
+obsessed, too :)</p>
+
+<p>The reason for this obsession is pattern recognition: The ability of our brain
+to help us recognize things subconsciously, from just glancing over them.</p>
+
+<p>Imagine you are driving a car, and there&rsquo;s a kid playing with a ball on the
+sidewalk. Even if you only see the kid from the corner of your eye your brain
+will immediately process this information and even assign a meaning to it.
+You&rsquo;ll start paying attention, and maybe lower your speed immediately.</p>
+
+<p>Often when you search for something online, and look at a couple of
+websites, your brain will help you recognize things that you are looking
+for without consciously thinking about the structure of the site.</p>
+
+<p>In the same way, as a programmer, when you look at code, you will immediately
+recognize some of its structure, and thereby understand it, without reading it
+thoroughly. This allows you to to grasp the overall picture of what you&rsquo;re
+looking at, and quickly find something that you&rsquo;re looking for, in order to
+then read this particular part of the code more carefully.</p>
+
+<p>As you can imagine, in order for this kind of pattern recognition to kick in,
+code needs to be formatted consistently and carefully.</p>
+
+<p>Another aspect of this is that looking at &ldquo;badly&rdquo; formatted code causes
+discomfort to an extent that it is described as causing physical pain. While
+this might seem like an exaggeration, there&rsquo;s something important to it.</p>
+
+<p>Because of how pattern recognition works, as a programmer, whenever there&rsquo;s
+a small issue with the formatting of some code, you will immediately notice
+it, and distract yourself from other thoughts. You&rsquo;ll need to re-focus on what
+you were trying to accomplish, and whenever you come back to the code it will
+distract you again.</p>
+
+<p>That&rsquo;s why developers often feel the urge to fix even small formatting
+mistakes immediately. People might outright refuse to talk about your actual
+code, and any questions that you have, before you&rsquo;ve added this one extra space
+here, and indented that other single line there.</p>
+
+<p>(One certain aspect of this has been even baked right into the language Ruby.
+For example, by definition, class names must start with an uppercase letter.
+On top of this, the Ruby community has agreed on conventions for how to
+write other names. We&rsquo;ll get to this once we talk about variables and
+classes more.)</p>
+
+        <nav class="page-nav"><a class="prev" href="/learning_to_program/dont_believe.html">
+  Previous
+</a></nav>
+        <nav class="page-nav"><a class="next" href="/learning_to_program/error_messages.html">
   Next
 </a></nav>
       </article>
@@ -628,7 +694,7 @@ which is a single-page version of the entire book.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>
