@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/wdi-sg/middleman-toc
+  revision: bebc1968c97a3762bdfad2de9e4b045ef51e0ccc
+  specs:
+    middleman-toc (0.0.10)
+      titleize
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -73,8 +80,6 @@ GEM
     middleman-syntax (2.0.0)
       middleman-core (~> 3.2)
       rouge (~> 1.0)
-    middleman-toc (0.0.7)
-      titleize
     minitest (5.9.0)
     multi_json (1.12.1)
     padrino-helpers (0.12.8)
@@ -107,7 +112,7 @@ GEM
     tilt (1.4.1)
     timers (4.0.4)
       hitimes
-    titleize (1.4.0)
+    titleize (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uber (0.0.15)
@@ -121,8 +126,8 @@ PLATFORMS
 DEPENDENCIES
   middleman (= 3.3.7)
   middleman-syntax (= 2.0.0)
-  middleman-toc
+  middleman-toc!
   redcarpet
 
 BUNDLED WITH
-   1.12.5
+   1.17.0
