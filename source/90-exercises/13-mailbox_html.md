@@ -145,5 +145,5 @@ and working with arrays and strings. And this time, you don't need to deal with
 the maximum length of strings per column. You can just interpolate things
 together.
 
-<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/13-mailbox_html-1.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/mailbox_html-1.html" class="solution">Show solution</a>
 

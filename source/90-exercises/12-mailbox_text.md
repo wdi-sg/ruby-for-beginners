@@ -67,4 +67,4 @@ Eventually, one goal to aim for would be: Adding another column to the table
 only requires mimimal changes, e.g. changes to one or two places in your
 formatter class.
 
-<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/12-mailbox_text-1.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/mailbox_text-1.html" class="solution">Show solution</a>

@@ -28,7 +28,7 @@ From:    Ferdous
 Subject: Homework this week
 ```
 
-<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/10-email-1.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/email-1.html" class="solution">Show solution</a>
 
 ## Exercise 10.2
 
@@ -48,4 +48,4 @@ email = Email.new("Keep on coding! :)", { :date => "2014-12-01", :from => "Ferdo
 
 Your program should now still produce the same output.
 
-<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/10-email-2.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/email-2.html" class="solution">Show solution</a>

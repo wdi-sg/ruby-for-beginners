@@ -56,7 +56,7 @@ nil       | false
 #<Module> | true
 ```
 
-<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/09-truthiness-1.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/truthiness-1.html" class="solution">Show solution</a>
 
 
 ## Bonus: Exercise 9.2
@@ -89,5 +89,5 @@ Tip: Break this up in sub-tasks:
 5. Add the table headers row.
 6. Join all rows with the string `"\n"` (newline), and output the result.
 
-<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/09-truthiness-2.html" class="solution">Show solution</a>
+<a href="https://wdi-sg.github.io/ruby-for-beginners/solutions/truthiness-2.html" class="solution">Show solution</a>
 
