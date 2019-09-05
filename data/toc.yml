@@ -1,6 +1,5 @@
 - index
 - preface
-- creation
 - path: exercises
   children:
   - numbers

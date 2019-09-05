@@ -1,6 +1,14 @@
 # Ruby For Beginners
 
-*[Ruby Monday Study Group](http://rubymonstas.org) curriculum for beginners*
+### Welcome to the sei-GA ruby for begginers.
+
+### Click on the left to begin the exercises!
+
+##### Below is about this original set of content:
+
+<hr/>
+
+*[From: Ruby Monday Study Group](http://rubymonstas.org) curriculum for beginners*
 
 This book has been written after we have run 4 beginners groups at our [Ruby
 Monstas](http://rubymonstas.org) groups in Berlin, and it outlines the current
